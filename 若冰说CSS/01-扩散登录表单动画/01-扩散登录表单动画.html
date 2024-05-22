@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>扩散登录表单动画</title>
+    <link rel="stylesheet" href="01-扩散登录表单动画.css">
+    <script src="../js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <h1>欢迎登录</h1>
+    <form action="">
+        <input type="text" class="tbx" placeholder="账号">
+        <input type="password" class="tbx" placeholder="密码">
+        <input type="submit" class="sub" value="登录">
+    </form>
+</div>
+<script>
+    // 获取容器元素
+    const con = document.querySelector('.container');
+    // 初始化变量
+    let isIn = true;
+    let isOut = false;
+    var span;
+
+    // 鼠标移入容器时触发事件
+    con.addEventListener('mouseenter', (e) => {
+        // 如果是第一次进入
+        if (isIn) {
+            // 计算鼠标相对于容器左上角的位置
+            let inX = e.clientX - e.target.offsetLeft;
+            let inY = e.clientY - e.target.offsetTop;
+            // 创建span元素并设置位置
+            let el = document.createElement('span');
+            el.style.left = inX + 'px';
+            el.style.top = inY + 'px';
+            con.appendChild(el);
+            // 移除之前可能存在的样式类，并添加进入动画样式类
+            $('.container span').removeClass('out');
+            $('.container span').addClass('in');
+            span = document.querySelector('.container span');
+            isIn = false;
+            isOut = true;
+        }
+    })
+
+    // 鼠标移出容器时触发事件
+    con.addEventListener('mouseleave', (e) => {
+        // 如果是第一次移出
+        if (isOut) {
+            // 计算鼠标相对于容器左上角的位置
+            let outX = e.clientX - e.target.offsetLeft;
+            let outY = e.clientY - e.target.offsetTop;
+            // 移除进入动画样式类，并添加退出动画样式类，设置位置
+            $('.container span').removeClass('in');
+            $('.container span').addClass('out');
+            $('.out').css('left', outX + 'px');
+            $('.out').css('top', outY + 'px');
+            isOut = false;
+            // 延迟500毫秒后移除span元素并重置状态
+            setTimeout(() => {
+                con.removeChild(span);
+                isIn = true;
+            }, 500);
+        }
+    })
+</script>
+</body>
+
+</html>
