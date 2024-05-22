@@ -6,13 +6,7 @@
 🏆 听若冰说Web前端
 </p>
 
-<h3 style = "color: #FFF;">若冰说CSS目录</h3>
-
-##### [01 HTML+CSS+JS扩散登录表单动画](/若冰说CSS/01-扩散登录表单动画)
-
-![扩散登录表单动画](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/01-扩散登录表单动画.gif)
-
-[//]: # (##### <a href="#">01 HTML+CSS+JS扩散登录表单动画</a>)
+### [若冰说CSS目录指南](/若冰说CSS目录指南/若冰说CSS目录指南.md)
 
 ### 沉浸式视频
 
