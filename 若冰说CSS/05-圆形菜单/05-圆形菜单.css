@@ -1,0 +1,179 @@
+* {
+    margin: 0; /* 重置默认外边距 */
+    padding: 0; /* 重置默认内边距 */
+}
+
+body {
+    background-color: black; /* 设置背景颜色为黑色 */
+    height: 100vh; /* 设置高度为视口高度 */
+}
+
+.menu-toggler {
+    position: absolute; /* 绝对定位 */
+    display: block; /* 块级元素 */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; /* 居中 */
+    width: 40px; /* 宽度为40px */
+    height: 40px; /* 高度为40px */
+    z-index: 2; /* 层级为2 */
+    opacity: 0; /* 初始透明度为0 */
+    cursor: pointer; /* 鼠标样式为手型 */
+}
+
+.menu-toggler:hover+label,
+.menu-toggler:hover+label::before,
+.menu-toggler:hover+label::after {
+    background: #fff; /* 鼠标悬停时背景色为白色 */
+}
+
+.menu-toggler:checked+label {
+    background: transparent; /* 选中时背景透明 */
+}
+
+.menu-toggler:checked+label::before,
+.menu-toggler:checked+label::after {
+    top: 0;
+    width: 40px;
+    transform-origin: 50% 50%;
+}
+
+.menu-toggler:checked+label::before {
+    transform: rotate(45deg); /* 旋转45度 */
+}
+
+.menu-toggler:checked+label::after {
+    transform: rotate(-45deg); /* 旋转-45度 */
+}
+
+.menu-toggler:checked~ul .menu-item {
+    opacity: 1; /* 显示 */
+}
+
+.menu-toggler:checked~ul .menu-item:nth-child(1) {
+    transform: rotate(0deg) translateX(-110px); /* 旋转且平移 */
+}
+
+.menu-toggler:checked~ul .menu-item:nth-child(2) {
+    transform: rotate(60deg) translateX(-110px); /* 旋转且平移 */
+}
+
+.menu-toggler:checked~ul .menu-item:nth-child(3) {
+    transform: rotate(120deg) translateX(-110px); /* 旋转且平移 */
+}
+
+.menu-toggler:checked~ul .menu-item:nth-child(4) {
+    transform: rotate(180deg) translateX(-110px); /* 旋转且平移 */
+}
+
+.menu-toggler:checked~ul .menu-item:nth-child(5) {
+    transform: rotate(240deg) translateX(-110px); /* 旋转且平移 */
+}
+
+.menu-toggler:checked~ul .menu-item:nth-child(6) {
+    transform: rotate(300deg) translateX(-110px); /* 旋转且平移 */
+}
+
+.menu-toggler:checked~ul .menu-item a {
+    pointer-events: auto; /* 启用鼠标事件 */
+}
+
+.menu-toggler+label {
+    width: 40px;
+    height: 5px;
+    display: block;
+    z-index: 1;
+    border-radius: 2.5px;
+    background: rgba(255, 255, 255, 0.7);
+    transition: transform 0.5s, top 0.5s;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; /* 居中 */
+}
+
+.menu-toggler+label::before,
+.menu-toggler+label::after {
+    width: 40px;
+    height: 5px;
+    display: block;
+    z-index: 1;
+    border-radius: 2.5px;
+    background: rgba(255, 255, 255, 0.7);
+    transition: transform 0.5s, top 0.5s;
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.menu-toggler+label::before {
+    top: 10px; /* 位置 */
+}
+
+.menu-toggler+label::after {
+    top: -10px; /* 位置 */
+}
+
+.menu-item:nth-child(1) a {
+    transform: rotate(0deg); /* 旋转 */
+}
+
+.menu-item:nth-child(2) a {
+    transform: rotate(-60deg); /* 旋转 */
+}
+
+.menu-item:nth-child(3) a {
+    transform: rotate(-120deg); /* 旋转 */
+}
+
+.menu-item:nth-child(4) a {
+    transform: rotate(-180deg); /* 旋转 */
+}
+
+.menu-item:nth-child(5) a {
+    transform: rotate(-240deg); /* 旋转 */
+}
+
+.menu-item:nth-child(6) a {
+    transform: rotate(-30deg); /* 旋转 */
+}
+
+.menu-item {
+    position: absolute; /* 绝对定位 */
+    display: block; /* 块级元素 */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; /* 居中 */
+    width: 80px; /* 宽度80px */
+    height: 80px; /* 高度80px */
+    opacity: 0; /* 初始透明度为0 */
+    transition: 0.5s; /* 过渡效果 */
+}
+
+.menu-item a {
+    display: block; /* 块级元素 */
+    width: inherit;
+    height: inherit;
+    line-height: 80px;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 40px;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.menu-item a:hover {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+    color: #fff;
+    background: rgba(255, 255, 255, 0.3);
+    font-size: 45px;
+}
