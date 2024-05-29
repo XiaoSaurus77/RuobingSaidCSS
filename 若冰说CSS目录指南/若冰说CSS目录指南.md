@@ -25,6 +25,6 @@
 
 ![圆形菜单](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/05-圆形菜单.gif)
 
-##### [06 跳动爱心加载](/若冰说CSS/06-跳动爱心加载)
+##### [06 爱心跳动加载](/若冰说CSS/06-爱心跳动加载)
 
-![跳动爱心加载](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/06-跳动爱心加载.gif)
+![爱心跳动加载](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/06-爱心跳动加载.gif)
