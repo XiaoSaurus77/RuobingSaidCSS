@@ -1,0 +1,337 @@
+/* 清除所有元素的默认margin和padding */  
+* {  
+    margin: 0; /* 清除外边距 */  
+    padding: 0; /* 清除内边距 */  
+}  
+  
+/* 设置body的样式 */  
+body {  
+    height: 100vh; /* 设置body的高度为视口高度的100% */  
+    display: flex; /* 使用flex布局 */  
+    justify-content: center; /* 在主轴上居中子元素 */  
+    align-items: center; /* 在交叉轴上居中子元素 */  
+    background: linear-gradient(200deg, #37e2b2, #2fa080); /* 设置背景色为线性渐变 */  
+}  
+  
+/* 设置panda容器的样式 */  
+.panda {  
+    position: relative; /* 设置相对定位 */  
+    width: 200px; /* 设置宽度为200px */  
+}  
+  
+/* 设置face的样式 */  
+.face {  
+    width: 200px; /* 设置宽度为200px */  
+    height: 200px; /* 设置高度为200px */  
+    background-color: #fff; /* 设置背景色为白色 */  
+    border-radius: 100%; /* 设置边框半径为100%，即圆形 */  
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15); /* 添加阴影效果 */  
+    position: relative; /* 设置相对定位 */  
+    z-index: 1; /* 设置堆叠顺序 */  
+}  
+  
+/* 设置ear的样式 */  
+.ear {  
+    width: 70px; /* 设置宽度为70px */  
+    height: 70px; /* 设置高度为70px */  
+    background-color: #000; /* 设置背景色为黑色 */  
+    border-radius: 100%; /* 设置边框半径为100%，即圆形 */  
+    position: absolute; /* 设置绝对定位 */  
+    top: -10px; /* 设置距离顶部的距离为-10px，使其向上偏移 */  
+}  
+  
+/* 设置右侧的ear样式 */  
+.ear.right {  
+    right: 0; /* 设置距离容器右侧的距离为0 */  
+}  
+  
+/* 设置eye-shadow的样式 */  
+.eye-shadow {  
+    width: 50px; /* 设置宽度为50px */  
+    height: 80px; /* 设置高度为80px */  
+    background-color: #000; /* 设置背景色为黑色 */  
+    border-radius: 50%; /* 设置边框半径为50%，即半圆形 */  
+    position: absolute; /* 设置绝对定位 */  
+    top: 40px; /* 设置距离顶部的距离为40px */  
+}  
+  
+/* 设置左侧的eye-shadow样式 */  
+.eye-shadow.left {  
+    transform: rotate(45deg); /* 旋转45度 */  
+    left: 30px; /* 设置距离容器左侧的距离为30px */  
+}  
+  
+/* 设置右侧的eye-shadow样式 */  
+.eye-shadow.right {  
+    transform: rotate(-45deg); /* 旋转-45度 */  
+    right: 30px; /* 设置距离容器右侧的距离为30px */  
+}  
+  
+/* 设置eye-white的样式 */  
+.eye-white {  
+    width: 30px; /* 设置宽度为30px */  
+    height: 30px; /* 设置高度为30px */  
+    background-color: #fff; /* 设置背景色为白色 */  
+    border-radius: 100%; /* 设置边框半径为100%，即圆形 */  
+    position: absolute; /* 设置绝对定位 */  
+    top: 68px; /* 设置距离顶部的距离为68px */  
+}  
+  
+/* 设置左侧的eye-white样式 */  
+.eye-white.left {  
+    left: 38px; /* 设置距离容器左侧的距离为38px */  
+}  
+  
+/* 设置右侧的eye-white样式 */  
+.eye-white.right {  
+    right: 38px; /* 设置距离容器右侧的距离为38px */  
+}  
+
+  
+/* 设置眼球的样式 */  
+.eye-ball {  
+    width: 20px; /* 设置眼球的宽度为20px */  
+    height: 20px; /* 设置眼球的高度为20px */  
+    background-color: #000; /* 设置眼球的颜色为黑色 */  
+    border-radius: 100%; /* 设置边框半径为100%，使眼球呈圆形 */  
+    position: absolute; /* 设置为绝对定位，使其可以相对于最近的已定位父元素进行定位 */  
+    left: 5px; /* 距离左侧父元素5px */  
+    top: 5px; /* 距离顶部父元素5px */  
+}  
+
+  
+/* 设置鼻子的样式 */  
+.nose {  
+    width: 35px; /* 设置鼻子的宽度为35px */  
+    height: 20px; /* 设置鼻子的高度为20px */  
+    background-color: #000; /* 设置鼻子的颜色为黑色 */  
+    position: absolute; /* 设置为绝对定位 */  
+    left: 0; /* 距离左侧父元素0px */  
+    right: 0; /* 距离右侧父元素0px，这里和left一起使用是为了水平居中 */  
+    margin: auto; /* 自动计算左右外边距，使元素水平居中 */  
+    bottom: 65px; /* 距离底部父元素65px */  
+    border-radius: 42px 42px 60px 60px / 30px 30px 60px 60px; /* 设置水平和垂直边框半径，创建椭圆形状 */  
+}  
+  
+
+  
+/* 设置嘴巴的样式 */  
+.mouth {  
+    width: 68px; /* 设置嘴巴的宽度为68px */  
+    height: 25px; /* 设置嘴巴的高度为25px */  
+    border-bottom: 7px solid #000; /* 底部边框为7px的实线，颜色为黑色 */  
+    border-radius: 50%; /* 设置边框半径为50%，使嘴巴呈半圆形 */  
+    position: absolute; /* 设置为绝对定位 */  
+    left: 0; /* 距离左侧父元素0px */  
+    right: 0; /* 距离右侧父元素0px，这里和left一起使用是为了水平居中 */  
+    margin: auto; /* 自动计算左右外边距，使元素水平居中 */  
+    bottom: 35px; /* 距离底部父元素35px */  
+}  
+  
+  
+/* 设置身体的样式 */  
+.body {  
+    width: 250px; /* 设置身体的宽度为250px */  
+    height: 280px; /* 设置身体的高度为280px */  
+    background-color: #fff; /* 设置身体的颜色为白色 */  
+    position: relative; /* 设置为相对定位，使其可以作为绝对定位元素的参考点 */  
+    left: -25px; /* 距离左侧父元素-25px，向左偏移 */  
+    top: -10px; /* 距离顶部父元素-10px，向上偏移 */  
+    border-radius: 100px 100px 100px 100px / 126px 126px 96px 96px; /* 设置水平和垂直边框半径，创建椭圆形状 */  
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */  
+}  
+  
+  
+/* 设置脚的样式 */  
+.foot {  
+    width: 82px; /* 设置脚的宽度为82px */  
+    height: 120px; /* 设置脚的高度为120px */  
+    background-color: #000; /* 设置脚的颜色为黑色 */  
+    position: absolute; /* 设置为绝对定位 */  
+    bottom: 8px; /* 距离底部父元素8px */  
+    z-index: 3; /* 设置堆叠顺序为3，以确保在其他元素之上 */  
+    border-radius: 40px 40px 35px 40px / 26px 26px 63px 63px; /* 设置水平和垂直边框半径，创建椭圆形状 */  
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */  
+}  
+
+/* 左脚样式设置 */  
+.foot.left {  
+    left: -80px; /* 左脚距离其最近的已定位父元素的左侧为-80px，即向左偏移80px */  
+}  
+  
+/* 右脚样式设置 */  
+.foot.right {  
+    right: -80px; /* 右脚距离其最近的已定位父元素的右侧为-80px，即向右偏移80px */  
+    transform: rotateY(180deg); /* 围绕Y轴旋转180度，使右脚朝向与左脚相反 */  
+}  
+  
+/* 脚的内部阴影部分 */  
+.foot::after {  
+    content: ""; /* 使用伪元素生成内容，但不显示实际内容 */  
+    width: 55px; /* 设置内部阴影部分的宽度为55px */  
+    height: 65px; /* 设置内部阴影部分的高度为65px */  
+    background-color: #222; /* 设置内部阴影部分的颜色为深灰色 */  
+    position: absolute; /* 设置为绝对定位 */  
+    border-radius: 50%; /* 设置边框半径为50%，使内部阴影部分呈圆形 */  
+    left: 0; /* 距离左侧父元素0px */  
+    right: 0; /* 距离右侧父元素0px，这里和left一起使用是为了水平居中 */  
+    margin: auto; /* 自动计算左右外边距，使元素水平居中 */  
+    bottom: 10px; /* 距离脚部底部10px */  
+}  
+  
+/* 脚底的样式设置 */  
+.foot .sole,  
+.foot .sole::before,  
+.foot .sole::after {  
+    width: 20px; /* 设置脚底及其伪元素的宽度为20px */  
+    height: 30px; /* 设置脚底及其伪元素的高度为30px */  
+    background-color: #222; /* 设置脚底及其伪元素的颜色为深灰色 */  
+    position: absolute; /* 设置为绝对定位 */  
+    border-radius: 50%; /* 设置边框半径为50%，使脚底及其伪元素呈圆形 */  
+    left: 0; /* 距离左侧父元素0px */  
+    right: 0; /* 距离右侧父元素0px，这里和left一起使用是为了水平居中 */  
+    margin: auto; /* 自动计算左右外边距，使元素水平居中 */  
+    top: 8px; /* 距离脚部顶部8px */  
+}  
+  
+/* 脚底左侧伪元素 */  
+.foot .sole::before {  
+    content: ""; /* 使用伪元素生成内容，但不显示实际内容 */  
+    left: -50px; /* 相对于脚底元素向左偏移-50px，即向左偏移50px */  
+}  
+  
+/* 脚底右侧伪元素 */  
+.foot .sole::after {  
+    content: ""; /* 使用伪元素生成内容，但不显示实际内容 */  
+    left: 25px; /* 相对于脚底元素向右偏移25px */  
+}
+/* 设置手的样式，以及手的前后伪元素的样式 */  
+.hand,  
+.hand::before,  
+.hand::after {  
+    width: 40px; /* 设置宽度为40px */  
+    height: 30px; /* 设置高度为30px */  
+    background-color: #000; /* 设置背景颜色为黑色 */  
+    border-radius: 50px; /* 设置边框半径为50px，这里其实等于width/2，使形状呈圆形 */  
+    position: absolute; /* 设置为绝对定位 */  
+    top: 70px; /* 距离父元素顶部70px */  
+    left: -20px; /* 距离父元素左侧-20px，即向左偏移20px */  
+}  
+  
+/* 设置手的前伪元素样式 */  
+.hand::before {  
+    content: ""; /* 使用伪元素生成内容，但此处不显示实际内容 */  
+    top: 16px; /* 距离手元素顶部16px */  
+    left: 0; /* 距离手元素左侧0px */  
+}  
+  
+/* 设置手的后伪元素样式 */  
+.hand::after {  
+    content: ""; /* 使用伪元素生成内容，但此处不显示实际内容 */  
+    top: 32px; /* 距离手元素顶部32px */  
+    left: 0; /* 距离手元素左侧0px */  
+}  
+  
+/* 设置右手的样式 */  
+.hand.right {  
+    right: -20px; /* 距离父元素右侧-20px，即向右偏移20px */  
+    left: auto; /* 取消之前的left定位，让right定位生效 */  
+}  
+  
+/* 设置登录框的样式 */  
+.login-box {  
+    width: 400px; /* 设置宽度为400px */  
+    height: 300px; /* 设置高度为300px */  
+    background-color: #fff; /* 设置背景颜色为白色 */  
+    border-radius: 3px; /* 设置边框半径为3px */  
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* 设置阴影效果，颜色为半透明的黑色 */  
+    position: absolute; /* 设置为绝对定位 */  
+    left: 50%; /* 距离父元素左侧50% */  
+    top: 50%; /* 距离父元素顶部50% */  
+    transform: translate(-50%, -110px); /* 通过transform属性进行位置调整，使其水平居中且向上偏移110px */  
+    z-index: 2; /* 设置元素的堆叠顺序，值越大越在上层 */  
+    display: flex; /* 设置为flex布局 */  
+    justify-content: center; /* 子元素在主轴（默认是水平轴）上居中对齐 */  
+    align-items: center; /* 子元素在交叉轴上居中对齐 */  
+    flex-direction: column; /* 设置主轴方向为列方向 */  
+    transition: 0.3s; /* 设置过渡效果持续时间为0.3秒 */  
+}  
+  
+/* 设置h1标签的样式 */  
+h1 {  
+    color: #1dc797; /* 设置文字颜色为绿色 */  
+    font-weight: bold; /* 设置字体加粗 */  
+    margin-bottom: 5px; /* 设置下外边距为5px */  
+}
+/* 定义 ipt-box 类的样式，通常用于包裹输入框和标签 */  
+.ipt-box {  
+    width: 80%; /* 设置容器的宽度为父元素宽度的80% */  
+    margin-top: 25px; /* 设置容器上边距为25px */  
+    position: relative; /* 设置容器的定位方式为相对定位 */  
+}  
+  
+/* 定义 ipt-box 容器内的 input 元素的样式 */  
+.ipt-box input {  
+    width: 100%; /* 设置输入框的宽度为父元素宽度的100% */  
+    height: 35px; /* 设置输入框的高度为35px */  
+    border: none; /* 移除输入框的边框 */  
+    border-bottom: 1px solid #bbb; /* 设置输入框底部边框为1px宽，颜色为#bbb */  
+    text-indent: 5px; /* 设置输入框内文本的首行缩进为5px */  
+    outline: none; /* 移除输入框的默认轮廓线 */  
+    transition: 0.3s; /* 设置输入框的过渡效果时长为0.3秒 */  
+}  
+  
+/* 定义 ipt-box 容器内的 label 元素的样式 */  
+.ipt-box label {  
+    position: absolute; /* 设置标签的定位方式为绝对定位 */  
+    left: 5px; /* 设置标签距离父元素左侧的距离为5px */  
+    top: 5px; /* 设置标签距离父元素顶部的距离为5px */  
+    font-size: 14px; /* 设置标签的字体大小为14px */  
+    font-weight: bold; /* 设置标签的字体加粗 */  
+    color: #888; /* 设置标签的字体颜色为#888 */  
+    transition: 0.3s; /* 设置标签的过渡效果时长为0.3秒 */  
+    pointer-events: none; /* 禁止标签接收鼠标事件 */  
+}  
+  
+/* 当 ipt-box 容器内的 input 元素获取焦点或输入有效时，应用以下样式 */  
+.ipt-box input:focus,  
+.ipt-box input:valid {  
+    border-color: #1dc797; /* 设置输入框底部边框颜色为#1dc797 */  
+    box-shadow: 0 1px #1dc797; /* 设置输入框的阴影效果 */  
+}  
+  
+/* 当 ipt-box 容器内的 input 元素获取焦点或输入有效时，其相邻的 label 元素应用以下样式 */  
+.ipt-box input:focus~label,  
+.ipt-box input:valid~label {  
+    color: #1dc797; /* 设置标签的字体颜色为#1dc797 */  
+    font-size: 12px; /* 设置标签的字体大小为12px */  
+    font-weight: bold; /* 设置标签的字体加粗 */  
+    transform: translateY(-15px); /* 将标签向下移动15px */  
+}  
+  
+/* 定义 button 元素的样式 */  
+button {  
+    width: 150px; /* 设置按钮的宽度为150px */  
+    height: 40px; /* 设置按钮的高度为40px */  
+    background-color: #1dc797; /* 设置按钮的背景颜色为#1dc797 */  
+    border: none; /* 移除按钮的边框 */  
+    border-radius: 3px; /* 设置按钮的边框圆角为3px */  
+    margin-top: 30px; /* 设置按钮的上边距为30px */  
+    color: #fff; /* 设置按钮的字体颜色为白色 */  
+    letter-spacing: 10px; /* 设置按钮内文本的字符间距为10px */  
+    text-indent: 10px; /* 设置按钮内文本的首行缩进为10px */  
+    cursor: pointer; /* 设置鼠标悬停在按钮上时显示小手图标 */  
+    transition: 0.3s; /* 设置按钮的过渡效果时长为0.3秒 */  
+}  
+  
+/* 当鼠标悬停在 button 元素上时，应用以下样式 */  
+button:hover {  
+    letter-spacing: 25px; /* 设置按钮内文本的字符间距为25px */  
+    text-indent: 25px; /* 设置按钮内文本的首行缩进为25px */  
+    background-color: #2fa080; /* 设置按钮的背景颜色为#2fa080 */  
+}  
+  
+/* 为元素添加 transform 属性，将其沿 x 轴向左移动其宽度的50%，并沿 y 轴向上移动180像素 */  
+.up {  
+    transform: translate(-50%, -180px);  
+}
