@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top, #a1c4fd, #c2e9fb);
+    --thumb-rotate: 0deg;
+}
+
+.slider-bar {
+    display: flex;
+    align-items: center;
+}
+
+#slider {
+    width: 90vw;
+    max-width: 500px;
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    outline: none;
+}
+
+#slider::-webkit-slider-runnable-track {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+#slider::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 50px;
+    height: 50px;
+    background: url('/qiaoba.png') no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    transform: scale(1.9) rotate(var(--thumb-rotate));
+    margin-top: -18px;
+}
+
+#slider::-webkit-slider-thumb:active {
+    background-position: 100% 0;
+    transform: scale(2) rotate(var(--thumb-rotate));
+}
+
+.slider-bar span {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+    font-weight: 600;
+    color: #5282cb;
+}
