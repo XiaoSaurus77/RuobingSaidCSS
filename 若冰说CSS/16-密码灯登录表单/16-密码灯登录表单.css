@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fefefe;
+    overflow: hidden;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+body::before {
+    width: 30vh;
+    height: 30vh;
+    background-color: #7875ac40;
+    top: 10vh;
+    left: -10vh;
+}
+
+body::after {
+    width: 60vh;
+    height: 60vh;
+    background-color: #7875ac20;
+    bottom: -15vh;
+    right: -15vh;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 500px;
+    height: 450px;
+    background-color: #fff;
+    box-shadow: 0 8px 50px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 40px;
+    width: 75%;
+    letter-spacing: 10px;
+    margin-bottom: 30px;
+}
+
+.ipt-box {
+    width: 75%;
+    margin: 10px 0;
+    border-radius: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.ipt-box input {
+    width: 100%;
+    font-size: 16px;
+    padding: 15px;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    outline: none;
+    background: none;
+    position: relative;
+    z-index: 2;
+}
+
+.ipt-box input[type="password"]::-ms-reveal,
+.ipt-box input[type="password"]::-ms-clear {
+    display: none;
+}
+
+.ipt-box .eye {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    z-index: 3;
+    cursor: pointer;
+}
+
+.btn-login {
+    width: 75%;
+    height: 50px;
+    margin-top: 30px;
+    border: none;
+    outline: none;
+    background-color: #7875ac;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+    letter-spacing: 8px;
+    text-indent: 8px;
+    cursor: pointer;
+}
+
+.beam {
+    width: 100vw;
+    height: 25vw;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 30px;
+    clip-path: polygon(100% 50%, 100% 50%, 0 0, 0 100%);
+    transform: translateY(-50%) rotate(var(--beam-deg, 0));
+    transform-origin: 100% 50%;
+    transition: transform 0.2s ease-out;
+}
+
+body.show-password {
+    background-color: #000;
+}
+
+body.show-password::before,
+body.show-password::after {
+    display: none;
+}
+
+.show-password .container {
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 50px rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.show-password h1 {
+    color: #fff;
+}
+
+.show-password .ipt-box {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.show-password input {
+    color: #fff;
+    border: 1px solid #000;
+}
+
+.show-password #password {
+    color: #000;
+}
+
+.show-password .beam {
+    background-color: yellow;
+}
+
+.show-password .btn-login {
+    background-color: #fff;
+    color: #000;
+}
+
+.show-password .eye {
+    color: #fff;
+}
