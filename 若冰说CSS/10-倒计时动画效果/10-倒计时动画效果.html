@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时动画效果</title>
+    <!-- <link rel="stylesheet" href="./10-倒计时动画效果.css"> -->
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #fdfbfb, #ebedee);
+}
+
+.container {
+    position: relative;
+}
+
+.counter {
+    width: 100%;
+    text-align: center;
+}
+
+.counter.hide {
+    transform: scale(0);
+    animation: hide 0.2s ease-out;
+}
+
+.nums {
+    width: 250px;
+    height: 80px;
+    color: #5696ff;
+    font-size: 80px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}.nums span {
+    position: absolute;
+    transform-origin: bottom center;
+    transform: rotate(120deg);
+}
+
+.nums span.in {
+    animation: goIn 0.5s ease-in-out;
+}
+
+.nums span.out {
+    animation: goOut 0.5s ease-in-out;
+}
+
+.final {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transform: scale(0);
+}
+
+.final.show {
+    transform: scale(1);
+    animation: show 0.3s ease-in;
+}
+
+.replay {
+    width: 100%;
+    background-color: #5696ff;
+    color: #fff;
+    border: none;
+    padding: 10px 0;
+    margin-top: 20px;
+    cursor: pointer;
+}
+@keyframes hide {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes show {
+    0% {
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1.4);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes goIn {
+    0% {
+        transform: rotate(120deg);
+    }
+
+    30% {
+        transform: rotate(-20deg);
+    }
+
+    60% {
+        transform: rotate(10deg);
+    }
+
+    90%,
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes goOut {
+
+    0%,
+    30% {
+        transform: rotate(0);
+    }
+
+    60% {
+        transform: rotate(20deg);
+    }
+
+    100% {
+        transform: rotate(-120deg);
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="counter">
+            <div class="nums">
+                <span class="in">3</span>
+                <span>2</span>
+                <span>1</span>
+                <span>0</span>
+            </div>
+            <h3>准备</h3>
+        </div>
+        <div class="final">
+            <h1>活动开始</h1>
+            <button class="replay">重来</button>
+        </div>
+    </div>
+</body>
+<script src="./10-倒计时动画效果.js"></script>
+</html>
