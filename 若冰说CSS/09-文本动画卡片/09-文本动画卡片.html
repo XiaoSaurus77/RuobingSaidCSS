@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本动画卡片</title>
+    <!-- <link rel="stylesheet" href="./09-文本动画卡片.css"> -->
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #212121;color: white;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 310px;
+    height: 220px;
+    overflow: hidden;
+    margin: 10px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    transition: 0.35s;
+}
+.card .text {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    bottom: 30px;
+    right: 30px;
+    padding: 0 18px;
+}
+
+.card .text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 100%;
+    border-left: 4px solid rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transition: 0.5s;
+    transition-delay: 0.6s;
+}
+.card .text h2,
+.card .text p {
+    margin-bottom: 6px;
+    opacity: 0;
+    transition: 0.35s;
+}
+
+.card .text h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+    transform: translate(30%, 0%);
+    transition-delay: 0.3s;
+}
+
+.card .text h2 span {
+    font-weight: 800;
+}
+
+.card .text p {
+    font-weight: 200;
+    transform: translate(0%, 30%);
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="images/1.jpg" alt="">
+            <div class="text">
+                <h2>How disciplined you are, how free you are.</h2>
+                <p>你有多自律，就有多自由。</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/2.jpg" alt="">
+            <div class="text">
+                <h2>The action to the present, the result to the time.</h2>
+                <p>把行动交给现在，把结果交给时间。</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/3.jpg" alt="">
+            <div class="text">
+                <h2>One more point of persistence, one less point of regret.</h2>
+                <p>多一分坚持，就会少一分遗憾。</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
