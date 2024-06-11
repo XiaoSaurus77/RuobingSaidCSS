@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eaeef0;
+}
+
+.loader {
+    display: flex;
+}
+
+.loader span {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: #eaeef0;
+    margin: 0 10px;
+    border-radius: 50%;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 1),
+    8px 8px 15px rgba(0, 0, 0, 0.2),
+    inset 3px 3px 5px rgba(0, 0, 0, 0.1),
+    inset -1px -1px 5px rgba(255, 255, 255, 1);
+    border: 6px solid #eaeef0;
+}
+
+.loader span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: lightseagreen;
+    border-radius: 50%;
+    box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.1),
+    inset -1px -1px 5px rgba(255, 255, 255, 1);
+    opacity: 0;
+    animation: animate 3.5s linear infinite,
+    animateColor 5s linear infinite;
+    animation-delay: calc(var(--i) * 0.15s);
+}
+
+@keyframes animate {
+    0%, 9.99%, 70.01% {
+        opacity: 0;
+    }
+    10%, 70% {
+        opacity: 1;
+    }
+}
+
+@keyframes animateColor {
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
