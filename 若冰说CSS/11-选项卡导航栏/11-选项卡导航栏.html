@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选项卡导航栏</title>
+    <link rel="stylesheet" href="../fonts/css/font-awesome.css">
+    <!-- <link rel="stylesheet" href="./11-选项卡导航栏.css"> -->
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.container {
+    border: 1px solid #38ada9;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav .item {
+    width: 140px;
+    height: 108px;
+    border-right: 1px solid #38ada9;
+    border-bottom: 1px solid #38ada9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}.nav .item:last-child {
+    border-right: none;
+}
+
+.nav .item::before {
+    content: "";
+    width: 80px;
+    height: 80px;
+    background-color: #38ada9;
+    border-radius: 50%;
+    position: absolute;
+    transition: 0.3s;
+}
+
+.nav .fa {
+    color: #fff;
+    position: relative;
+    font-size: 36px;
+}.nav .item.active::before {
+    width: 150%;
+    height: 150%;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="item active"><i class="fa fa-file-powerpoint-o"></i></div>
+            <div class="item"><i class="fa fa-file-photo-o"></i></div>
+            <div class="item"><i class="fa fa-file-zip-o"></i></div>
+            <div class="item"><i class="fa fa-file-sound-o"></i></div>
+            <div class="item"><i class="fa fa-file-movie-o"></i></div>
+        </div>
+        <div class="content">
+            <section class="active"><span>powerpoint</span></section>
+            <section><span>photo</span></section>
+            <section><span>zip</span></section>
+            <section><span>sound</span></section>
+            <section><span>movie</span></section>
+        </div>
+    </div>
+</body>
+<script src="./11-选项卡导航栏.js"></script>
+</html>
