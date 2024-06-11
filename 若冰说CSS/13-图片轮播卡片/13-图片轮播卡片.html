@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片轮播卡片</title>
+    <!-- <link rel="stylesheet" href="./13-图片轮播卡片.css"> -->
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #efefef;
+}
+.container {
+    width: 100vw;
+    max-width: 850px;
+    height: 350px;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+    position: relative;
+}.card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 350px;
+    padding-left: 30px;
+    position: absolute;
+    overflow: hidden;
+}
+
+.card .img {
+    width: 260px;
+    height: 260px;
+    border-radius: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+}
+.card .img img {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.6s;
+}
+
+#slide_1:checked~.card-1 img,
+#slide_2:checked~.card-2 img,
+#slide_3:checked~.card-3 img {
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+
+
+.card .content {
+    flex: 1;
+    padding: 0 30px 0 35px;
+    position: relative;
+    left: 50px;
+    opacity: 0;
+    transition: 0.6s;
+}
+
+#slide_1:checked~.card-1 .content,
+#slide_2:checked~.card-2 .content,
+#slide_3:checked~.card-3 .content {
+    opacity: 1;
+    z-index: 9;
+    left: 0;
+    transition-delay: 0.3s;
+}
+.card .title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.card .text {
+    font-size: 17px;
+    color: #555;
+    text-align: justify;
+    margin-bottom: 25px;
+}
+
+.card a {
+    padding: 13px 20px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+    float: right;
+}
+.slider {
+    position: absolute;
+    bottom: 25px;
+    left: 55%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider .slide {
+    width: 50px;
+    height: 10px;
+    background-color: #dfdfdf;
+    display: inline-flex;
+    margin: 0 3px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}.slider .slide::before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    background-color: #000;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s;
+}
+
+#slide_1:checked~.slider .slide-1::before,
+#slide_2:checked~.slider .slide-2::before,
+#slide_3:checked~.slider .slide-3::before {
+    width: 100%;
+    transform: scaleX(1);
+}
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <input type="radio" name="select" id="slide_1" checked hidden>
+    <input type="radio" name="select" id="slide_2" hidden>
+    <input type="radio" name="select" id="slide_3" hidden>
+
+    <div class="slider">
+        <label for="slide_1" class="slide slide-1"></label>
+        <label for="slide_2" class="slide slide-2"></label>
+        <label for="slide_3" class="slide slide-3"></label>
+    </div>
+
+    <div class="card card-1">
+        <div class="img">
+            <img src="./images/1.jpg" alt="波雅·汉库克">
+        </div>
+        <div class="content">
+            <div class="title">女帝</div>
+            <div class="text">
+                波雅·汉库克，漫画《航海王》及其衍生作品中的角色。人称：海贼女帝，是位于无风带女儿岛的海贼国家亚马逊·百合王国的现任皇帝，同时也是九蛇海贼团的船长，其绝世的容颜被世人评价为“世界第一美女”。
+            </div>
+            <a href="#">查看详情</a>
+        </div>
+</div>
+<div class="card card-2">
+    <div class="img">
+        <img src="./images/2.jpg" alt="妮可·罗宾">
+    </div>
+    <div class="content">
+        <div class="title">罗宾</div>
+        <div class="text">
+            妮可·罗宾，漫画《航海王》及其衍生作品中的角色，草帽一伙的考古学家，出生在西海的考古学之岛“奥哈拉”，奥哈拉的幸存者。“花花果实”能力者，能让身体的任何部位像开花一样绽放在视线范围内的任何有形体的事物上并作出攻击或其他用途。
+        </div>
+        <a href="#">查看详情</a>
+    </div>
+</div>
+<div class="card card-3">
+    <div class="img">
+        <img src="./images/3.jpg" alt="娜美，漫画">
+    </div>
+    <div class="content">
+        <div class="title">娜美</div>
+        <div class="text">
+            娜美，漫画《航海王》及衍生作品中的女主角，草帽一伙的航海士，人称“小贼猫”。使用棍术，现在武器为“魔法天候棒”。头脑聪明又机灵，精通气象学和航海术，能用身体感知天气，完美指示航路，是个能精确画出航海图的天才航海士。
+        </div>
+        <a href="#">查看详情</a>
+    </div>
+</div>
+    </div>
+</body>
+
+</html>
