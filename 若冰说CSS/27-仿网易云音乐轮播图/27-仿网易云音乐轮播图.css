@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+}
+
+.swipe {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.swipe .bg {
+    position: absolute;
+    width: 500%;
+    height: 100%;
+    z-index: 1;
+    background-image: url("../images/cloud_music/1.jpg");
+    background-size: 6000px;
+    background-position: center center;
+    filter: blur(140px);
+}
+
+.swipe section {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1500px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+.swipe .img-box {
+    width: 100%;
+    height: 100%;
+}
+
+.swipe .img-box .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swipe .select {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    bottom: 20px;
+    text-align: center;
+}
+
+.swipe .select .item {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.swipe .select .item:hover {
+    background-color: #ff4400;
+}
+
+.swipe .select .item.checked {
+    background-color: #ff4400;
+}
+
+.swipe .btn {
+    width: 40px;
+    height: 100px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    background-color: rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.swipe .btn.left {
+    left: -60px;
+}
+
+.swipe .btn.right {
+    right: -60px;
+}
+
+.swipe .btn:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 1620px) {
+    .swipe .btn.left {
+        left: 20px;
+    }
+
+    .swipe .btn.right {
+        right: 20px;
+    }
+}
