@@ -11,6 +11,7 @@
 ![扩散登录表单动画](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/01-扩散登录表单动画.gif)
 
 ##### [02 响应式导航栏](/若冰说CSS/02-响应式导航栏)
+
 ![响应式导航栏](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/02-响应式导航栏.gif)
 
 ##### [03 玻璃按钮](/若冰说CSS/03-玻璃按钮)
@@ -49,9 +50,6 @@
 
 ![选项卡导航栏](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/11-选项卡导航栏.gif)
 
-
-
-
 ##### [12 动态登录表单](/若冰说CSS/12-选项卡导航栏)
 
 ![动态登录表单](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/12-动态登录表单.gif)
@@ -83,3 +81,35 @@
 ##### [19 多彩球体加载器](/若冰说CSS/19-多彩球体加载器)
 
 ![多彩球体加载器](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/19-多彩球体加载器.gif)
+
+##### [20 自定义下拉菜单](/若冰说CSS/20-自定义下拉菜单)
+
+![自定义下拉菜单](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/20-自定义下拉菜单.gif)
+
+##### [21 动态卡片](/若冰说CSS/21-动态卡片)
+
+![动态卡片](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/21-动态卡片.gif)
+
+##### [22 3D卡片翻转](/若冰说CSS/22-3D卡片翻转)
+
+![3D卡片翻转](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/22-3D卡片翻转.gif)
+
+##### [23 旋转呼吸加载器](/若冰说CSS/23-旋转呼吸加载器)
+
+![旋转呼吸加载器](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/23-旋转呼吸加载器.gif)
+
+##### [24 3D旋转登录表单](/若冰说CSS/24-3D旋转登录表单)
+
+![3D旋转登录表单](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/24-3D旋转登录表单.gif)
+
+##### [25 彩色浮雕按钮](/若冰说CSS/25-彩色浮雕按钮)
+
+![彩色浮雕按钮](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/25-彩色浮雕按钮.gif)
+
+##### [26 全屏搜索栏](/若冰说CSS/26-全屏搜索栏)
+
+![全屏搜索栏](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/26-全屏搜索栏.gif)
+
+##### [27 仿网易云音乐轮播图](/若冰说CSS/27-仿网易云音乐轮播图)
+
+![仿网易云音乐轮播图](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/27-仿网易云音乐轮播图.gif)
