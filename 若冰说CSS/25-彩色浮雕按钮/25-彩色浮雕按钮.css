@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #e8e8e8;
+}
+
+button {
+    margin: 10px;
+    width: 280px;
+    height: 90px;
+    font-size: 35px;
+    font-weight: bold;
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: pointer; 
+    position: relative;
+    box-shadow: inset 1px 1px 2px #000,
+        inset -1px -1px 2px #808080;
+    color: #333;
+    text-shadow: 1px 1px 0 #808080;
+    overflow: hidden;
+    transition: 0.3s linear 0.15s;
+}
+
+button:nth-child(1) {
+    --c: #ff4757;
+}
+
+button:nth-child(2) {
+    --c: #ffa502;
+}
+
+button:nth-child(3) {
+    --c: #2ed573;
+}
+
+button:nth-child(4) {
+    --c: #1e90ff;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 8px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0 0 50% 50%;
+    filter: blur(5px);
+    transition: 0.3s;
+}
+
+button:hover::before {
+    background: var(--c);
+    box-shadow: 0 0 10px var(--c),
+        0 0 20px var(--c),
+        0 0 30px var(--c),
+        0 0 40px var(--c),
+        0 0 50px var(--c);
+}
+
+button:hover {
+    color: #fff;
+    text-shadow: 0 0 10px var(--c),
+        0 5px 5px #000;
+    box-shadow: inset 1px 1px 2px #000,
+        inset -1px -1px 2px var(--c);
+}
