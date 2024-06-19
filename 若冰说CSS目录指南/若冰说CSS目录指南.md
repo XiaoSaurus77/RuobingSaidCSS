@@ -58,9 +58,9 @@
 
 ![图片轮播卡片](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/13-图片轮播卡片.gif)
 
-##### [14 动态展开式圆形菜单](/若冰说CSS/14-动态展开式圆形菜单)
+##### [14 动态展开式菜单](/若冰说CSS/14-动态展开式菜单)
 
-![动态展开式圆形菜单](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/14-动态展开式圆形菜单.gif)
+![动态展开式菜单](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/14-动态展开式菜单.gif)
 
 ##### [15 旋转拇指的滑动条](/若冰说CSS/15-旋转拇指的滑动条)
 
