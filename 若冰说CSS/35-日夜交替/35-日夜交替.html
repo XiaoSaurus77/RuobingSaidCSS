@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日夜交替</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./35-日夜交替.css">
+    <script src="./35-日夜交替.js"></script>
+</head>
+
+<body>
+    <div class="btn-box">
+        <div onclick="change('light')">
+            <i class="fa fa-sun-o" aria-hidden="true"></i> 日间
+        </div>
+        <div onclick="change('dark')">
+            <i class="fa fa-moon-o" aria-hidden="true"></i> 日夜
+        </div>
+    </div>
+    <div class="dark" id="container">
+        <div class="bg"></div>
+        <div class="moon-box">
+            <div class="moon"></div>
+        </div>
+        <div class="sun-box">
+            <div class="sun"></div>
+        </div>
+        <div class="sea"></div>
+    </div>
+</body>
+
+</html>
