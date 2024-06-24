@@ -113,3 +113,36 @@
 ##### [27 仿网易云音乐轮播图](/若冰说CSS/27-仿网易云音乐轮播图)
 
 ![仿网易云音乐轮播图](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/27-仿网易云音乐轮播图.gif)
+
+##### [28 玻璃卡片](/若冰说CSS/28-玻璃卡片)
+
+![玻璃卡片](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/28-玻璃卡片.gif)
+
+##### [29 简约登录注册表单](/若冰说CSS/29-简约登录注册表单)
+
+![简约登录注册表单](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/29-简约登录注册表单.gif)
+
+##### [30 立体字时钟](/若冰说CSS/30-立体字时钟)
+
+![立体字时钟](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/30-立体字时钟.gif)
+
+##### [31 彩色跳动球加载](/若冰说CSS/31-彩色跳动球加载)
+
+![彩色跳动球加载](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/31-彩色跳动球加载.gif)
+
+##### [32 侧边栏菜单](/若冰说CSS/32-侧边栏菜单)
+
+![侧边栏菜单](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/32-侧边栏菜单.gif)
+
+##### [33 爱心点赞](/若冰说CSS/33-爱心点赞)
+
+![爱心点赞](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/33-爱心点赞.gif)
+
+##### [34 动态搜索框](/若冰说CSS/34-动态搜索框)
+
+![动态搜索框](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/34-动态搜索框.gif)
+
+##### [35 日夜交替](/若冰说CSS/35-日夜交替)
+
+![日夜交替](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/35-日夜交替.gif)
+
