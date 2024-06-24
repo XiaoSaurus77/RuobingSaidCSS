@@ -37,7 +37,7 @@
         若冰说CSS
     </a>
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="https://mp.weixin.qq.com/mp/appmsgalbum?search_click_id=10045757485442445104-1719243316159-7790145359&__biz=Mzg2MDUxNTgzMw==&action=getalbum&album_id=3231144488803221507#wechat_redirect">
+    <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkwNzcwMDg0Nw==&action=getalbum&album_id=3504783850406428672#wechat_redirect">
         听若冰说编程
     </a>
 </h4>
