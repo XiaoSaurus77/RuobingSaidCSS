@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+section .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.login {
+    position: relative;
+    width: 500px;
+    min-height: 300px;
+    padding: 60px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(3px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2)
+}
+
+
+.login h2 {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #8f2c24;
+    margin-bottom: 10px;
+}
+
+.login .inputBox {
+    position: relative;
+}
+
+.login .inputBox input {
+    position: relative;
+    width: 100%;
+    padding: 15px 20px;
+    outline: none;
+    font-size: 1.25em;
+    color: #8f2c24;
+    border-radius: 5px;
+    background: #fff;
+    border: none;
+    margin-bottom: 30px;
+}
+
+
+
+.login .inputBox ::placeholder {
+    color: #8f2c24;
+}
+
+.login .inputBox #btn {
+    position: relative;
+    border: none;
+    outline: none;
+    background: #8f2c24;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.25em;
+    font-weight: 500;
+}
+
+.login .group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.login .group a {
+    font-size: 1.25em;
+    color: #8f2c24;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.flower {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.flower img {
+    position: absolute;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        top: -10px;
+        transform: translateX(20px) rotate(0deg);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    20% {
+        transform: translateX(-20px) rotate(45deg);
+    }
+
+    40% {
+        transform: translateX(-20px) rotate(90deg);
+    }
+
+    60% {
+        transform: translateX(20px) rotate(180deg);
+    }
+
+    80% {
+        transform: translateX(-20px) rotate(45deg);
+    }
+
+    100% {
+        top: 110%;
+        transform: translateX(20px) rotate(225deg);
+    }
+}
+
+.flower img:nth-child(1) {
+    left: 20%;
+    animation: animate 20s linear infinite;
+}
+
+.flower img:nth-child(2) {
+    left: 50%;
+    animation: animate 14s -2s linear infinite;
+}
+
+.flower img:nth-child(3) {
+    left: 70%;
+    animation: animate 12s -3s linear infinite;
+}
+
+.flower img:nth-child(4) {
+    left: 5%;
+    animation: animate 15s -2s linear infinite;
+}
+
+.flower img:nth-child(5) {
+    left: 85%;
+    animation: animate 18s -1s linear infinite;
+}
+
+.flower img:nth-child(6) {
+    left: 90%;
+    animation: animate 12s -1s linear infinite;
+}
+
+.flower img:nth-child(7) {
+    left: 15%;
+    animation: animate 14s -2s linear infinite;
+}
+
+.flower img:nth-child(8) {
+    left: 60%;
+    animation: animate 15s -1s linear infinite;
+}
+
+.login .inputBox i {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 28px;
+    color: #8f2c24;
+    cursor: pointer;
+}
+
+.login .inputBox .icon-see {
+    display: block;
+}
+
+.login .inputBox .icon-nosee {
+    display: none;
+}
+
+.login .inputBox.see .icon-see {
+    display: none;
+}
+
+.login .inputBox.see .icon-nosee {
+    display: block;
+}
