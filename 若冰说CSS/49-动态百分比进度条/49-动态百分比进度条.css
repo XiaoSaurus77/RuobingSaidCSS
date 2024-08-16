@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e8e8e8;
+  }
+  
+  .percent {
+    position: relative;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .percent svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .percent svg circle {
+    width: 100%;
+    width: 100%;
+    fill: none;
+    stroke-width: 10;
+    stroke: #000;
+    transform: translate(5px, 5px);
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    transition: all .5s;
+  }
+  
+  .percent svg circle:nth-child(1) {
+    stroke-dashoffset: 0;
+    stroke: #f3f3f3;
+  }
+  
+  .percent svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440 - 440 * (20 / 100));
+    stroke: #21a0ff;
+  }
+  
+  .percent .number {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+  }
+  
+  .percent .number span:nth-child(1) {
+    font-size: 48px;
+  }
+  
+  .percent .number span:nth-child(2) {
+    font-size: 20px;
+  }
