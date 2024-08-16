@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>火柴盒动画</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=BenchNine:700&display=swap");:root{--color-outline:#302519;--color-background:#f1d6bc;--color-match:#b36b4a;--size-border:8px;--size-height:300px;--size-width:200px;--size-depth:100px}*{box-sizing:border-box;margin:0;padding:0;transition:all 0.3s ease}*:before,*:after{content:"";position:absolute}body{display:flex;justify-content:center;align-items:center;height:100vh;background:var(--color-background);font-family:"BenchNine",sans-serif}.container{width:500px;height:500px;position:relative;perspective:1200px;padding-left:80px;padding-top:180px}.box{width:var(--size-height);height:var(--size-width);position:absolute;transform-style:preserve-3d;transition:transform 0.5s;transform:rotate(-50deg) rotateX(30deg) translateZ(10px);cursor:pointer;transform-origin:center center}.box > div{position:absolute;text-align:center}.box .front,.box .back{width:var(--size-height);height:var(--size-width)}.box .front,.box .back{background:var(--color-background);border:var(--size-border) solid var(--color-outline)}.box .right,.box .left{width:var(--size-depth);height:var(--size-width)}.box .right,.box .left{left:var(--size-depth)}.box .top,.box .bottom{width:var(--size-height);height:var(--size-depth)}.box .top,.box .bottom{top:calc(var(--size-depth) / 2)}.box .right,.box .left,.box .top,.box .bottom{background:var(--color-background);border:var(--size-border) solid var(--color-outline);border-bottom-width:calc(var(--size-border) * 2)}.box .front{transform:translateZ(50px)}.box .back{transform:rotateX(-180deg) translateZ(50px)}.box .right{transform:rotateY(90deg) translateZ(150px)}.box .left{transform:rotateY(-90deg) translateZ(150px);background:var(--color-outline)}.box .top{transform:rotateX(90deg) translateZ(100px)}.box .bottom{transform:rotateX(-90deg) translateZ(100px);overflow:hidden;display:flex;justify-content:center;align-items:center}.box.outside .bottom:before{background-image:radial-gradient(var(--color-outline) 20%,transparent 20%),radial-gradient(var(--color-outline) 20%,transparent 20%);background-position:0 0,8px 8px;background-size:16px 16px;width:calc(100% - 20px);height:calc(100% - 22px)}.box.outside .front{z-index:1000}.box.outside .front:before{left:0;top:0;width:55px;height:55px;background:var(--color-outline);-webkit-mask-image:radial-gradient(
+                circle 10px at 100% 100%,transparent 0,transparent 55px,var(--color-outline) 0px
+        );mask-image:radial-gradient(
+                circle 10px at 100% 100%,transparent 0,transparent 55px,var(--color-outline) 0px
+        )}.box.outside .front:after{content:"Light the \A fire with \A matches";white-space:pre;font-size:16px;line-height:20px;letter-spacing:0.5px;color:var(--color-outline);text-transform:uppercase;transform:rotate(90deg);transform-origin:center center;background:var(--color-background);width:70px;height:84px;border-radius:50%;display:flex;justify-content:center;align-items:center;left:calc(50% - 35px);top:calc(50% - 42px)}.box.outside .front .line:nth-child(1),.box.outside .front .line:nth-child(2){position:absolute;display:flex;justify-content:center;align-items:center}.box.outside .front .line:nth-child(1){width:154px;height:120px;left:calc(50% - 77px);top:calc(50% - 60px)}.box.outside .front .line:nth-child(1):before{width:4px;height:140px;background:linear-gradient(
+                to top,var(--color-outline),var(--color-outline) 10px,transparent 10px,transparent 16px,var(--color-outline) 16px,var(--color-outline) 124px,transparent 124px,transparent 130px,var(--color-outline) 130px,var(--color-outline) 140px
+        )}.box.outside .front .line:nth-child(1):after{width:4px;height:174px;background-color:var(--color-outline);border-radius:4px;background:linear-gradient(
+                to right,var(--color-outline),var(--color-outline) 10px,transparent 10px,transparent 16px,var(--color-outline) 16px,var(--color-outline) 158px,transparent 158px,transparent 164px,var(--color-outline) 164px,var(--color-outline) 174px
+        )}.box.outside .front .line:nth-child(2){width:116px;height:106px;left:calc(50% - 58px);top:calc(50% - 53px);border-radius:50%}.box.outside .front .line:nth-child(2):before,.box.outside .front .line:nth-child(2):after{width:4px;height:140px;border-radius:4px;background:linear-gradient(
+                to top,var(--color-outline),var(--color-outline) 14px,transparent 14px,transparent 22px,var(--color-outline) 22px,var(--color-outline) 118px,transparent 118px,transparent 126px,var(--color-outline) 126px,var(--color-outline) 140px
+        )}.box.outside .front .line:nth-child(2):before{transform:rotate(-45deg)}.box.outside .front .line:nth-child(2):after{transform:rotate(45deg)}.box.outside .front .line:nth-child(3),.box.outside .front .line:nth-child(4){position:absolute;width:116px;height:106px;left:calc(50% - 58px);top:calc(50% - 53px);border-radius:50%;display:flex;justify-content:center;align-items:center}.box.outside .front .line:nth-child(3):before,.box.outside .front .line:nth-child(3):after,.box.outside .front .line:nth-child(4):before,.box.outside .front .line:nth-child(4):after{width:4px;border-radius:4px;background-color:var(--color-outline)}.box.outside .front .line:nth-child(3):before,.box.outside .front .line:nth-child(3):after{height:150px}.box.outside .front .line:nth-child(3):before{transform:rotate(67.5deg)}.box.outside .front .line:nth-child(3):after{transform:rotate(-67.5deg)}.box.outside .front .line:nth-child(4):before,.box.outside .front .line:nth-child(4):after{height:126px}.box.outside .front .line:nth-child(4):before{transform:rotate(22.5deg)}.box.outside .front .line:nth-child(4):after{transform:rotate(-22.5deg)}.box.inside .bottom:before,.box.inside .front:after,.box.inside .front:before{display:none}.box.inside .right{background-color:var(--color-outline)}.box.inside .back,.box.inside .front{width:var(--size-height);background-color:var(--color-outline);height:calc(var(--size-width) - calc(var(--size-border) * 1.5));margin-top:var(--size-border)}.box.inside .right,.box.inside .left{width:var(--size-depth);height:calc(var(--size-width) - calc(var(--size-border) * 1.5));background-color:var(--color-outline);left:var(--size-depth);top:var(--size-border)}.box.inside .left{opacity:0}.box.inside .top,.box.inside .bottom{width:var(--size-height);height:var(--size-depth)}.box.inside .bottom{top:calc(calc(var(--size-depth) / 2) + calc(var(--size-border) * -0.5));border-top-width:calc(var(--size-border) * 2)}.box.inside .top{background-color:var(--color-outline);top:calc(calc(var(--size-depth) / 2) + calc(var(--size-border) / 1))}.box.inside .front{background-color:transparent;display:flex;flex-direction:column;justify-content:space-around;align-items:flex-end;padding-right:30px}.box.inside .front .match{height:16px;width:200px;border:calc(var(--size-border) / 2) solid var(--color-outline);background-color:var(--color-background);position:relative}.box.inside .front .match:before{width:12px;height:100%;background-color:var(--color-match);right:0}.box.inside .front .match:after{height:16px;width:24px;background-color:var(--color-background);border:calc(var(--size-border) / 2) solid var(--color-outline);border-radius:50% 50% 50% 50% / 40% 50% 50% 40%;right:calc(-24px - calc(var(--size-border) / 2));top:calc((50% - 8px) - calc(var(--size-border) / 2));background-image:radial-gradient(var(--color-outline) 20%,transparent 20%),radial-gradient(var(--color-outline) 20%,transparent 20%);background-position:0 0,4px 4px;background-size:8px 8px}.box.inside{transform:translateX(55px) translateZ(-6px)}.box.inside .back{position:relative}.box.inside .back span{color:var(--color-outline);z-index:1000;position:absolute;top:0;left:calc(var(--size-border) * -6);margin-top:calc(var(--size-border) * -6);font-size:calc(var(--size-border) * 2);transform-origin:bottom center;transform:scaleY(-1);text-transform:uppercase;transition:opacity 0.2s linear 0.2s}.box:hover .box.inside .back span{opacity:0;transition:opacity 0.1s linear}.box:hover .box.inside{transform:translate(100px)}.box:hover{transform:rotate(-20deg) rotateX(35deg) rotateZ(-25deg)}.box:hover .box.inside .front{transform:translateZ(50px);transition:transform 0.2s ease}.box.inside .front{transform:translateZ(35px);border:none;transition:all 0.2s ease;transition-delay:0.3s}.box.inside .front .match{transition:all 0.2s ease;transition-delay:0.2s}.box:hover .box.inside .front .match{transition:all 0.3s ease-in}.box:hover .box.inside .front .match:nth-child(3){transform:translateX(20px)}.box:hover .box.inside .front .match:nth-child(4){transform:translateX(40px)}.box:hover .box.inside .front .match:nth-child(6){transform:translateX(70px)}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box outside">
+            <div class="front">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+
+            <div class="box inside">
+                <div class="front">
+                    <div class="match"></div>
+                    <div class="match"></div>
+                    <div class="match"></div>
+                    <div class="match"></div>
+                    <div class="match"></div>
+                    <div class="match"></div>
+                    <div class="match"></div>
+                </div>
+
+                <div class="back"><span>Hover Me~</span></div>
+                <div class="right"></div>
+                <div class="left"></div>
+                <div class="top"></div>
+                <div class="bottom"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
