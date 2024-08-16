@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(200deg, #dad4ec, #f3e7e9);
+}
+
+ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+    transition: 0.5s;
+}
+
+ul li a {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin: 0 30px;
+    color: #333;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+ul:hover li {
+    opacity: 0.2;
+    filter: blur(2px);
+}
+
+ul li:hover {
+    opacity: 1;
+    filter: blur(0px);
+}
