@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222327;
+}
+
+.nav {
+    width: 400px;
+    height: 70px;
+    padding: 0 25px;
+    border-radius: 10px;
+    background-color: #fff;
+    position: relative;
+    display: flex;
+}
+
+.nav li {
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+    position: relative;
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav li i {
+    position: relative;
+    display: block;
+    height: 70px;
+    line-height: 70px;
+    font-size: 24px;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.nav li span {
+    position: absolute;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: all .5s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.nav li.active i {
+    transform: translateY(-35px);
+    color: #fff;
+}
+
+.nav li.active span {
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+.indicator {
+    position: absolute;
+    top: -50%;
+    width: 70px;
+    height: 70px;
+    background: #2196f3;
+    border-radius: 50%;
+    border: 6px solid #222327;
+    transition: all .5s;
+}
+
+.indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-top-right-radius: 20px;
+    box-shadow: 1px -10px 0 0 #222327;
+}
+
+.indicator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-top-left-radius: 20px;
+    box-shadow: -1px -10px 0 0 #222327;
+}
+
+li:nth-child(1).active~.indicator {
+    transform: translateX(calc(70px * 0));
+}
+
+li:nth-child(2).active~.indicator {
+    transform: translateX(calc(70px * 1));
+}
+
+li:nth-child(3).active~.indicator {
+    transform: translateX(calc(70px * 2));
+}
+
+li:nth-child(4).active~.indicator {
+    transform: translateX(calc(70px * 3));
+}
+
+li:nth-child(5).active~.indicator {
+    transform: translateX(calc(70px * 4));
+}
