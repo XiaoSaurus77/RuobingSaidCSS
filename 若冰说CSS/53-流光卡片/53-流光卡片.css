@@ -29,8 +29,7 @@ body {
     position: absolute;
     width: 500px;
     height: 500px;
-    background-image: conic-gradient
-    (transparent, transparent, 
+    background-image: conic-gradient(transparent, transparent,
     transparent, #de44d4);
     animation: animate 4s linear infinite;
     animation-delay: -2s;
@@ -41,8 +40,7 @@ body {
     position: absolute;
     width: 500px;
     height: 500px;
-    background-image: conic-gradient
-    (transparent, transparent,
+    background-image: conic-gradient(transparent, transparent,
     transparent, #00ccff);
     animation: animate 4s linear infinite;
 }

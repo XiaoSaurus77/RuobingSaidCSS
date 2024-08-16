@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #eff0f4;
+    overflow: hidden;
+}
+
+.box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 150px auto;
+    width: 470px;
+}
+
+.box .content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 350px;
+    height: 350px;
+    padding: 60px 20px;
+    box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05),
+        25px 35px 20px rgba(0, 0, 0, 0.05), 25px 30px 30px rgba(0, 0, 0, 0.05),
+        inset -20px -20px 25px rgba(255, 255, 255, 0.9);
+}
+
+.box .content {
+    border-radius: 52% 48% 33% 67% / 38% 45% 55% 62%;
+    transition: 0.5s;
+}
+
+.box .content:hover {
+    border-radius: 50%;
+}
+
+.box .content::before {
+    content: "";
+    position: absolute;
+    top: 50px;
+    left: 85px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.9;
+}
+
+.box .content::after {
+    content: "";
+    position: absolute;
+    top: 90px;
+    left: 110px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.9;
+}
+
+.box .content div {
+    position: relative;
+    width: 225px;
+    border-radius: 25px;
+    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
+        inset -2px -5px 10px rgba(255, 255, 255, 1),
+        15px 15px 10px rgba(0, 0, 0, 0.05), 15px 10px 15px rgba(0, 0, 0, 0.025);
+}
+
+.box .content div::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+
+.box .content input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    padding: 10px 15px;
+}
+
+.box .content input[type="submit"] {
+    color: #fff;
+    cursor: pointer;
+}
+
+.box .content div:last-child {
+    width: 120px;
+    background: #ff0f5b;
+    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
+        15px 15px 10px rgba(0, 0, 0, 0.05), 15px 10px 15px rgba(0, 0, 0, 0.025);
+    transition: 0.5s;
+}
+
+.box .content div:last-child:hover {
+    width: 150px;
+}
+
+.btns {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 120px;
+    height: 120px;
+    background: #c61dff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    box-shadow: inset 10px 10px 10px rgba(190, 1, 254, 0.05),
+        15px 25px 10px rgba(190, 1, 254, 0.1), 15px 20px 20px rgba(190, 1, 254, 0.1),
+        inset -10px -10px 15px rgba(255, 255, 255, 0.5);
+    border-radius: 44% 56% 65% 35% / 57% 58% 42% 43%;
+}
+
+.register {
+    bottom: 150px;
+    right: 0px;
+    width: 80px;
+    height: 80px;
+    border-radius: 49% 51% 52% 48% / 63% 59% 41% 37%;
+    background: #01b4ff;
+    box-shadow: inset 10px 10px 10px rgba(1, 180, 255, 0.05),
+        15px 25px 10px rgba(1, 180, 255, 0.1), 15px 20px 20px rgba(1, 180, 255, 0.1),
+        inset -10px -10px 15px rgba(255, 255, 255, 0.5);
+}
+
+.btns::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.45;
+}
+
+.register::before {
+    left: 20px;
+    width: 15px;
+    height: 15px;
+}
+
+.btns {
+    transition: 0.25s;
+}
+
+.btns:hover {
+    border-radius: 50%;
+}

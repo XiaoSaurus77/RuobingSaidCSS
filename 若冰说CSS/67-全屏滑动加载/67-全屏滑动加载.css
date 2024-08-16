@@ -12,8 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: linear-gradient
-    (to right, #fee0a2, #f98d92, #ce65af, #8e51d3);
+    background: linear-gradient(to right, #fee0a2, #f98d92, #ce65af, #8e51d3);
 }
 
 .mask {
