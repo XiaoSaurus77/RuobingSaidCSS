@@ -1,0 +1,36 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e8e8e8;
+}
+
+.btn {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 50px;
+    color: #333;
+    font-family: Didot;
+    background-color: #fff;
+    box-shadow:
+        20px 20px 30px rgba(0, 0, 0, 0.2),
+        -20px -20px 30px rgba(255, 255, 255, 1);
+    user-select: none;
+    transition: all 0.4s ease-out;
+    text-shadow: 2px 2px 2px #ccc;
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow:
+        0 0 0 rgba(0, 0, 0, 0.2),
+        0 0 0 rgba(255, 255, 255, 0.8),
+        inset 10px 10px 20px rgba(0, 0, 0, 0.1),
+        inset -10px -10px 20px rgba(255, 255, 255, 1);
+    font-size: 48px;
+}
