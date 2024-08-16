@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #577ad4, #ad3d88);
+}
+
+.nav {
+    width: 250px;
+    height: 50px;
+    background-color: #fff;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.toggle {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    color: #ff216d;
+    padding: 5px 20px;
+}
+
+.toggle::before {
+    content: 'Menu';
+    margin-right: 10px;
+}
+
+.toggle.active::before {
+    content: 'Close';
+    margin-right: 10px;
+}
+
+.toggle span {
+    position: relative;
+    width: 20px;
+    height: 50px;
+}
+
+.toggle span::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ff216d;
+    transition: 0.5s;
+}
+
+.toggle span::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ff216d;
+    transition: 0.5s;
+}
+
+.toggle.active span::before {
+    transform: rotate(225deg);
+    top: 24px;
+}
+
+.toggle.active span::after {
+    transform: rotate(135deg);
+    bottom: 24px;
+}
+
+
+ul {
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+ul li {
+    height: 50px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    position: relative;
+    list-style: none;
+    transition: .5s;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-250px);
+    transition-delay: calc(0.1s * var(--i));
+}
+
+.nav.active li {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0px);
+}
