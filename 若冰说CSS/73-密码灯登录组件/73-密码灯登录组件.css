@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fefefe;
+    overflow: hidden;
+}
+
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(2px);
+}
+
+body::before {
+    width: 30vh;
+    height: 30vh;
+    background-color: #42adf5;
+    top: 10vh;
+    left: -10vh;
+}
+
+body::after {
+    width: 60vh;
+    height: 60vh;
+    background-color: #42adf5;
+    bottom: -15vh;
+    right: -25vh;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 500px;
+    height: 450px;
+    background-color: #fff;
+    box-shadow: 0 8px 50px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+h1 {
+    font-size: 40px;
+    width: 75%;
+    letter-spacing: 10px;
+    margin-bottom: 30px;
+}
+
+.inp-box {
+    width: 75%;
+    margin: 10px 0;
+    border-radius: 5px;
+    position: relative;
+}
+
+.inp-box input {
+    width: 100%;
+    font-size: 16px;
+    padding: 15px;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    outline: none;
+    background: none;
+    position: relative;
+    z-index: 2;
+}
+
+.btn-login {
+    width: 75%;
+    height: 50px;
+    margin-top: 30px;
+    border: none;
+    outline: none;
+    background-color: #4e6ef2;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+    letter-spacing: 8px;
+    text-indent: 8px;
+    cursor: pointer;
+}
+
+.inp-box .eye {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    z-index: 3;
+    cursor: pointer;
+}
+
+.light {
+    width: 100vw;
+    height: 25vw;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 30px;
+    clip-path: polygon(100% 50%, 100% 50%, 0 0, 0 100%);
+    transform: translateY(-50%) rotate(var(--deg, 0));
+    transform-origin: right center;
+    transition: transform .2s ease-out;
+    background-color: yellow;
+}
+
+body.show-pass {
+    background-color: #000;
+}
+
+body.show-pass::before,
+body.show-pass::after {
+    display: none;
+}
+
+.show-pass .container {
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 50px rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.show-pass h1 {
+    color: #fff;
+}
+
+.show-pass .inp-box {
+    border: 1px solid rgb(255, 255, 255, 0.5);
+}
+
+.show-pass input {
+    color: #fff;
+    border: 1px solid #000;
+}
+
+.show-pass #pass {
+    color: #000;
+}
+
+.show-pass .eye {
+    color: #fff;
+}
+
+.show-pass .btn-login {
+    background-color: #fff;
+    color: #000;
+}
+
+.show-pass .light {
+    background-color: yellow;
+}
