@@ -307,3 +307,18 @@
 
 ![抓住这只可爱鬼魂](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/75-抓住这只可爱鬼魂.gif)
 
+##### [76 火柴盒动画](/若冰说CSS/76-火柴盒动画)
+
+![火柴盒动画](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/76-火柴盒动画.gif)
+
+##### [77 发光的流星](/若冰说CSS/77-发光的流星)
+
+![发光的流星](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/77-发光的流星.gif)
+
+##### [78 充满趣味的动态乌贼](/若冰说CSS/78-充满趣味的动态乌贼)
+
+![充满趣味的动态乌贼](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/78-充满趣味的动态乌贼.gif)
+
+##### [79 在鱼缸里的养了只鱼](/若冰说CSS/79-在鱼缸里的养了只鱼)
+
+![在鱼缸里的养了只鱼](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/79-在鱼缸里的养了只鱼.gif)
