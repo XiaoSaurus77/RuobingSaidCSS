@@ -319,6 +319,6 @@
 
 ![充满趣味的动态乌贼](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/78-充满趣味的动态乌贼.gif)
 
-##### [79 在鱼缸里的养了只鱼](/若冰说CSS/79-在鱼缸里的养了只鱼)
+##### [79 在鱼缸里养了只鱼](/若冰说CSS/79-在鱼缸里养了只鱼)
 
-![在鱼缸里的养了只鱼](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/79-在鱼缸里的养了只鱼.gif)
+![在鱼缸里养了只鱼](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/79-在鱼缸里养了只鱼.gif)
