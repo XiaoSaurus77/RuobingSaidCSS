@@ -1,0 +1,198 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #04334a;
+}
+
+html {
+	font-family: "Open Sans", sans-serif;
+}
+
+form {
+	padding: 80px 60px 40px;
+	height: 600px;
+	width: 360px;
+	background: linear-gradient(148deg, #45d2ff 0%, #00a3d7 100%);
+	border-radius: 10px;
+}
+
+div {
+	position: relative;
+}
+
+div.eyes {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 80px;
+}
+
+div.eyes > * {
+	position: relative;
+	content: "";
+	--d: 80px;
+	height: var(--d);
+	width: var(--d);
+	background: #fff;
+	border-radius: 100%;
+}
+
+div.eyes > *:after {
+	position: absolute;
+	content: "";
+	height: 50%;
+	width: 50%;
+	background: #000;
+	border-radius: 100%;
+	border: 10px solid #302f52;
+}
+
+.left:after {
+	bottom: 17px;
+	left: 17%;
+}
+
+.right:after {
+	bottom: 11px;
+	left: 35%;
+}
+
+div.email:before,
+div.email:after {
+	content: "";
+	position: absolute;
+	top: 72px;
+	background: #fff;
+	border-radius: 10px;
+}
+
+div.email:before {
+	right: 22px;
+	width: 8px;
+	height: 24px;
+	animation: drooling 10s infinite cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+div.email:after {
+	right: 14px;
+	width: 5px;
+	height: 16px;
+	animation: drooling 6s infinite cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+div.field {
+	margin-bottom: 40px;
+}
+
+div.field:last-child {
+	margin-bottom: 0;
+}
+
+label,
+input {
+	display: block;
+	width: 100%;
+	color: #fff;
+	padding: 0 15px;
+}
+
+label {
+	margin-bottom: 10px;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+input {
+	padding-top: 5px;
+	background: #302f52;
+	border-radius: 50px;
+	border: none;
+	outline: none;
+	font-size: 18px;
+	font-family: "Open Sans";
+	font-weight: 700;
+	line-height: 2;
+	transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+input:focus {
+	box-shadow: inset 0 0 0 3px #fff;
+}
+
+input[type="password"] {
+	letter-spacing: 3px;
+	text-shadow: 0 1px 0 #fff, 0 2px 0 #fff, 0 3px 0 #fff, 0 4px 0 #fff,
+		0 5px 0 #fff, 0 6px 0 #fff, 0 7px 0 #fff, 0 8px 0 #fff, 0 9px 0 #fff,
+		0 10px 0 #fff, 0 11px 0 #fff, 0 12px 0 #fff, 0 13px 0 #fff, 0 14px 0 #fff,
+		0 15px 0 #fff, 0 16px 0 #fff, 0 17px 0 #fff;
+}
+
+div.link {
+	text-align: center;
+}
+
+a {
+	position: relative;
+	margin: 0 auto;
+	color: #fff;
+	font-size: 14px;
+	text-decoration: none;
+	transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+a:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+	width: 100%;
+	height: 1px;
+	background: #fff;
+	transition: inherit;
+}
+
+a:hover:after,
+a:focus:after {
+	width: 60%;
+	left: 20%;
+}
+
+.button {
+	width: 100%;
+	color: #302f52;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: 700;
+	font-family: "Open Sans";
+	line-height: 2;
+	background: #fff;
+	border-radius: 50px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.button:hover,
+.button:focus {
+	box-shadow: inset 0 0 0 3px #302f52;
+}
+
+@keyframes drooling {
+	0% {
+	}
+	30% {
+		height: 40%;
+	}
+	60% {
+		height: 20%;
+	}
+}
