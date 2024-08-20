@@ -1,0 +1,428 @@
+:root {
+  --animation-d: .4s;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 16px;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: rgb(113, 182, 199);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.snowglobe {
+  position: relative;
+  background-color: rgb(113, 182, 199);
+  border: 1rem solid rgb(71, 124, 138);
+  width: 50rem;
+  height: 50rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transform: translate(0,0) rotate(0);
+  cursor: pointer;
+}
+
+.snowglobe-background {
+  position: absolute;
+  background-color: rgb(113, 182, 199);
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+}
+.snowglobe-highlight {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background: linear-gradient(to top left, rgba(255, 255, 255, .8) 10%, rgba(255, 255, 255, 0) 50%);
+}
+.snowglobe-shadow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, rgba(18, 70, 83, 0.4) 10%, rgba(18, 70, 83, 0) 50%);
+}
+
+.snowglobe-highlight2 {
+  position: absolute;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, .8) 10%, rgba(255, 255, 255, 0) 50%);
+  width: 95%;
+  height: 95%;
+  border-radius: 50%;
+}
+
+.ground {
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.ground-top {
+  position: absolute;
+  width: 120%;
+  height: 20rem;
+  background-color: rgba(255,255,255);
+  border-radius: 50%;
+  left: -10%;
+  bottom: 0rem;
+}
+
+.snowman {
+  position: relative;
+  height: 35rem;
+  width: 35rem;
+  /* background-color: aqua; */
+}
+
+.body {
+  position: relative;
+  background-color: rgb(234, 243, 250);
+  height: 18rem;
+  width: 18rem;
+  border-radius: 50%;
+  box-shadow: inset -2rem -2rem 0 rgb(173, 201, 255);
+  overflow: hidden;
+}
+
+.head {
+  position: relative;
+  background-color: rgb(234, 243, 250);
+  height: 12rem;
+  width: 12rem;
+  border-radius: 50%;
+  box-shadow: inset -2rem -1rem 0 rgb(173, 201, 255);
+  overflow: hidden;
+}
+
+.scarf {
+  position: absolute;
+  left: 2.5rem;
+  bottom: 15rem;
+  width: 13rem;
+  height: 3rem;
+  border-radius: 2rem 2rem 1rem 1rem;
+  background-color: rgb(165, 42, 42);
+  box-shadow: inset -2rem 0 0 rgb(107, 30, 30),
+  inset 2rem .2rem 0 rgb(209, 62, 62);
+}
+
+.scarf2 {
+  position: absolute;
+  left: 10.5rem;
+  bottom: 9rem;
+  width: 3rem;
+  height: 8rem;
+  border-radius: 1rem;
+  background-color: rgb(165, 42, 42);
+  box-shadow: inset -1rem 3rem 0 rgb(107, 30, 30);
+}
+
+.scarf-shadow {
+  position: absolute;
+  left: 0;
+  bottom: 14rem;
+  width: 17rem;
+  height: 3rem;
+  border-radius: 2rem 2rem 1rem 1rem;
+  background-color: rgb(173, 201, 255);
+}
+.scarf-shadow::after {
+  content: '';
+  position: absolute;
+  left: 11.5rem;
+  bottom: -6rem;
+  width: 3rem;
+  height: 8rem;
+  border-radius: 1rem;
+  background-color: rgb(173, 201, 255);
+}
+
+.button {
+  position: absolute;
+  background-color: rgb(112, 108, 108);
+  box-shadow: inset -.8rem -.8rem 0 rgb(66, 65, 65);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  left: 7.5rem;
+  bottom: 5rem;
+}
+.button2 {
+  bottom: 10rem;
+}
+
+.eye {
+  position: absolute;
+  background-color: rgb(63, 62, 62);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  left: 7.5rem;
+  bottom: 6.5rem;
+  /* overflow: hidden; */
+}
+.eye-left {
+  left: 2.5rem;
+}
+
+.eye-glow {
+  position: absolute;
+  background-color: rgb(209, 199, 199);
+  width: .8rem;
+  height: .8rem;
+  border-radius: 50%;
+  left: .2rem;
+  top: .2rem;
+}
+
+.nose {
+  position: absolute;
+  background-color: orange;
+  width: 4rem;
+  height: 2rem;
+  left: 5rem;
+  border-radius: 200% 520% 520% 200% / 300% 320% 320% 300%;
+  bottom: 4rem;
+  box-shadow: inset -.8rem -.5rem 0 rgb(211, 128, 3);
+  transform: rotate(10deg);
+}
+
+.hat {
+  position: absolute;
+  bottom: 11rem;
+  left: 1rem;
+  transform-origin: center;
+  transform: rotate(15deg);
+}
+
+.hat-bottom {
+  position: absolute;
+  background-color: rgb(112, 108, 108);
+  box-shadow: inset -2rem 0 0 rgb(66, 65, 65);
+  height: 3rem;
+  width: 12rem;
+  border-radius: 1rem;
+  bottom: -.1rem;
+}
+
+.hat-main {
+  position: absolute;
+  background-color: rgb(112, 108, 108);
+  box-shadow: inset -2rem -1rem 0 rgb(66, 65, 65);
+  height: 10rem;
+  width: 8rem;
+  border-radius: 2rem;
+  bottom: 0;
+  left: 2rem;
+}
+
+.hat-middle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  background-color: rgb(139, 2, 2);
+  box-shadow: inset -2rem -1rem 0 rgb(94, 2, 2);
+}
+
+.hat-shadow {
+  position: absolute;
+  height: 3rem;
+  width: 12rem;
+  border-radius: 1rem;
+  background-color: rgb(173, 201, 255);
+  bottom: 8.5rem;
+  transform-origin: center;
+  transform: rotate(15deg);
+}
+
+.hat-glow {
+  position: absolute;
+  background-color: rgba(255,255,255,.5);
+  width: 1rem;
+  height: 2rem;
+  border-radius: .5rem;
+  top: 1rem;
+  left: .8rem;
+}
+.hat-glow::after {
+  content: '';
+  position: absolute;
+  background-color: rgba(255,255,255,.5);
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  bottom: -1.5rem;
+}
+
+.body-glow {
+  position: absolute;
+  background-color: rgb(255,255,255);
+  height: 3rem;
+  width: 2rem;
+  top: 5rem;
+  left: 2rem;
+  border-radius: 1rem;
+  transform-origin: center;
+  transform: rotate(15deg);
+}
+.body-glow::after {
+  content: '';
+  position: absolute;
+  background-color: rgb(255,255,255);
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  bottom: -3rem;
+  left: .8rem;
+}
+
+
+.foot {
+  position: absolute;
+  background-color: rgb(66, 64, 64);
+  box-shadow: inset 4rem 0 0 rgb(95, 93, 93),
+      inset -3rem 0 0 rgb(41, 39, 39);
+  width: 80%;
+  height: 15rem;
+  bottom: -2rem;
+  z-index: -1;
+}
+.foot::after {
+  content:'';
+  position: absolute;
+  width: 100%;
+  height: 10rem;
+  -webkit-clip-path: ellipse(50% 60% at 50% 100%);
+  clip-path: ellipse(50% 60% at 50% 0%);
+  background-color: rgb(66, 64, 64);
+  box-shadow: inset 4rem 0 0 rgb(95, 93, 93),
+      inset -3rem 0 0 rgb(41, 39, 39);
+  bottom: -10rem;
+}
+
+.shadow {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-30rem, 35rem);
+  width: 60rem;
+  height: 15rem;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,.2);
+  z-index: -5;
+}
+
+.snow {
+  position: absolute;
+  width: 75%;
+  height: 7.8rem;
+  bottom: 11rem;
+}
+
+.snowflake {
+  position: absolute;
+  background-color: #fff;
+  opacity: 0;
+  border-radius: 50%;
+  transition: all .25s;
+  transform: translate(0,0);
+}
+
+
+.head-all {
+  transform: translate(0, 0) rotate(0);
+  position: absolute;
+  left: 11.5rem;
+  bottom: 15rem;
+  transform-origin: bottom center;
+  
+}
+
+.body-all {
+  position: absolute;
+  left: 8.5rem;
+  bottom: 0;
+  transform-origin: center;
+  transform: rotate(0);
+}
+
+.body-animation {
+  animation-name: body-animation;
+  animation-timing-function: linear;
+  animation-duration: var(--animation-d);
+}
+
+.head-animation {
+  animation-name: head-animation;
+  animation-timing-function: linear;
+  animation-duration: var(--animation-d);
+}
+
+.snowglobe-animation {
+  animation-name: globe-animation;
+  animation-timing-function: linear;
+  animation-duration: var(--animation-d);
+}
+
+.shadow-animation {
+  animation-name: shadow-animation;
+  animation-timing-function: linear;
+  animation-duration: var(--animation-d);
+}
+
+@keyframes globe-animation {
+  0% {transform: translate(0, 0) rotate(0);}
+  50% {transform: translate(10rem, -10rem) rotate(15deg);}
+  100% {transform: translate(0, 0) rotate(0);}
+}
+
+@keyframes shadow-animation {
+  0% {transform: translate(-30rem, 35rem) scale(1);}
+  50% {transform: translate(-20rem, 35rem) scale(.8);}
+  100% {transform: translate(-30rem, 35rem) scale(1);}
+}
+
+@keyframes body-animation {
+  0% {transform: rotate(0);}
+  25% {transform: rotate(-25deg);}
+  50% {transform: rotate(0);}
+  75% {transform: rotate(25deg);}
+  100% {transform: rotate(0);}
+}
+
+@keyframes head-animation {
+  0% {transform: translate(0, 0) rotate(0);}
+  25% {transform: translate(-3rem, 0) rotate(-40deg);}
+  50% {transform: translate(0, 0) rotate(0);}
+  75% {transform: translate(3rem, 0) rotate(50deg);}
+  100% {transform: translate(0, 0) rotate(0);}
+}
+
+
+@media only screen and (max-width: 600px) {
+  html {
+      font-size: 40%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  html {
+      font-size: 20%;
+  }
+}
