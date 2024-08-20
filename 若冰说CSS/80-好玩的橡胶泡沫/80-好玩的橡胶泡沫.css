@@ -1,0 +1,134 @@
+:root {
+  --main-bg: #000000;
+  --pink: 255, 0, 89;
+  --violet: 186, 0, 253;
+  --blue: 0, 165, 253;
+  --yellow: 255, 200, 0;
+  --light: 255, 255, 255;
+  --alpha: 0.5;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  min-height: 100vh;
+  background-color: var(--main-bg);
+}
+
+.bubble {
+  position: relative;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  box-shadow: inset 0 0 2rem rgba(var(--light), 1),
+    inset 2rem 0 4rem rgba(var(--pink), 1),
+    inset -2rem 0 6rem rgba(var(--blue), 1),
+    inset 0 4rem 4rem rgba(var(--violet), 1),
+    inset 0 -2rem 2rem rgba(var(--yellow), 1),
+    inset 2rem -2rem 1rem rgba(var(--yellow), 1),
+    0 0 4rem rgba(var(--light), 0.2),
+    2rem 0 8rem rgba(var(--pink), var(--alpha)),
+    -2rem 0 8rem rgba(var(--blue), var(--alpha)),
+    0 4rem 8rem rgba(var(--violet), var(--alpha)),
+    0 -2rem 8rem rgba(var(--yellow), var(--alpha));
+  animation: floating 3s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.bubble.animated {
+  animation: rubber 1s linear;
+}
+
+.bubble::before,
+.bubble::after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-radius: 100%;
+  transform: rotate(40deg);
+}
+
+.bubble::before {
+  top: 2rem;
+  right: 2rem;
+  width: 5rem;
+  height: 2rem;
+  background-color: rgba(var(--light), 1);
+  background: radial-gradient(closest-side,
+      rgba(var(--light), 0.7) 50%,
+      transparent 100%);
+}
+
+.bubble::after {
+  bottom: 1.5rem;
+  left: 1.5rem;
+  width: 10rem;
+  height: 5rem;
+  background: radial-gradient(closest-side,
+      rgba(var(--light), 0.3) 50%,
+      transparent 100%);
+}
+
+@keyframes rubber {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes floating {
+  from {
+    transform: translate(0, 0);
+  }
+
+  65% {
+    transform: translate(0, 1rem);
+  }
+
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 10px;
+  }
+}
