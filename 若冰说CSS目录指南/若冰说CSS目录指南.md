@@ -322,3 +322,23 @@
 ##### [79 在鱼缸里养了只鱼](/若冰说CSS/79-在鱼缸里养了只鱼)
 
 ![在鱼缸里养了只鱼](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/79-在鱼缸里养了只鱼.gif)
+
+##### [80 好玩的橡胶泡沫](/若冰说CSS/80-好玩的橡胶泡沫)
+
+![好玩的橡胶泡沫](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/80-好玩的橡胶泡沫.gif)
+
+##### [81 送货卡车加载组件](/若冰说CSS/81-送货卡车加载组件)
+
+![送货卡车加载组件](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/81-送货卡车加载组件.gif)
+
+##### [82 怪兽形态](/若冰说CSS/82-怪兽形态)
+
+![怪兽形态](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/82-怪兽形态.gif)
+
+##### [83 有趣的圣诞雪球](/若冰说CSS/83-有趣的圣诞雪球)
+
+![有趣的圣诞雪球](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/83-有趣的圣诞雪球.gif)
+
+##### [84 场景相机](/若冰说CSS/84-场景相机)
+
+![场景相机](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/84-场景相机.gif)
