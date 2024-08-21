@@ -299,6 +299,12 @@
 
 ![密码灯登录组件](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/73-密码灯登录组件.gif)
 
+
+##### [73 表白信封](/若冰说CSS/73-表白信封)
+
+![表白信封](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/73-表白信封.gif)
+
+
 ##### [74 蜡烛吹灭动画](/若冰说CSS/74-蜡烛吹灭动画)
 
 ![蜡烛吹灭动画](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/74-蜡烛吹灭动画.gif)
