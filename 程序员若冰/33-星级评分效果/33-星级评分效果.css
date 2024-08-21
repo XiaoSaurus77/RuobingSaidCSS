@@ -1,0 +1,44 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e8e8e8;
+}
+
+.rating:not(:checked)>input {
+    position: absolute;
+    appearance: none;
+}
+
+.rating:not(:checked)>label {
+    float: right;
+    cursor: pointer;
+    font-size: 30px;
+    fill: #666;
+}
+
+.rating:not(:checked)>label>svg {
+    fill: #666;
+    /* Set default color for SVG */
+    transition: fill 0.3s ease;
+    /* Add a transition effect */
+}
+
+.rating>input:checked+label:hover,
+.rating>input:checked+label:hover~label,
+.rating>input:checked~label:hover,
+.rating>input:checked~label:hover~label,
+.rating>label:hover~input:checked~label {
+    fill: #e58e09;
+}
+
+.rating:not(:checked)>label:hover,
+.rating:not(:checked)>label:hover~label {
+    fill: #ff9e0b;
+}
+
+.rating>input:checked~label>svg {
+    fill: #ffa723;
+    /* Set color for selected stars */
+}
