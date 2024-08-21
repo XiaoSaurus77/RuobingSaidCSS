@@ -1,0 +1,185 @@
+@charset "UTF-8";
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --hue: 223;
+  --bg: hsl(0,0%,100%);
+  --fg: hsl(var(--hue),10%,10%);
+  --trans-dur: 0.3s;
+  --trans-ease-in-out: cubic-bezier(0.65,0,0.35,1);
+  --trans-ease-out: cubic-bezier(0.33,1,0.68,1);
+  font-size: calc(20px + (40 - 20) * (100vw - 280px) / (3840 - 280));
+}
+
+body,
+button {
+  color: var(--fg);
+  font: 1em/1.5 "DM Sans", sans-serif;
+  transition: background-color var(--trans-dur), color var(--trans-dur);
+}
+
+body {
+  background-color: var(--bg);
+  display: flex;
+  height: 100vh;
+}
+
+main {
+  margin: auto;
+  padding: 0.75em 0;
+  width: min-content;
+  height: 12em;
+}
+
+.drop {
+  --drop-trans-dur: 0.5s;
+  --drop-flare-dist: 0;
+  border-radius: 0.5em;
+  margin: auto;
+  padding: 0.25em 0.25em 0 0.25em;
+  position: relative;
+  min-width: 9em;
+}
+.drop, .drop:after {
+  background-color: hsl(var(--hue), 10%, 90%);
+  transition: background-color var(--trans-dur);
+}
+.drop:before, .drop:after {
+  content: "";
+  position: absolute;
+}
+.drop:before {
+  background-image: radial-gradient(100% 100% at 100% 50%, hsla(var(--hue), 90%, 50%, 0.5), hsla(var(--hue), 90%, 50%, 0) 50%);
+  display: none;
+  right: 0;
+  bottom: 100%;
+  width: 9em;
+  height: 9em;
+}
+.drop:after {
+  border-radius: 0.4375em;
+  display: block;
+  top: 0.125em;
+  left: 0.125em;
+  width: calc(100% - 0.25em);
+  height: calc(100% - 0.25em);
+}
+.drop__btn {
+  background-color: white;
+  border-radius: 0.375em;
+  box-shadow: 0 0 0 0.25em hsla(var(--hue), 90%, 50%, 0);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  height: 2.5em;
+  outline: transparent;
+  margin-bottom: 0.25em;
+  padding: 0.75em;
+  position: relative;
+  width: 100%;
+  transition: background-color var(--trans-dur), box-shadow calc(var(--trans-dur) / 2) var(--trans-ease-in-out), color var(--drop-trans-dur);
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  z-index: 1;
+}
+.drop__btn:hover, .drop__btn:focus-visible, .drop__btn[aria-expanded=true] {
+  background-color: hsl(var(--hue), 10%, 95%);
+}
+.drop__btn:focus-visible {
+  box-shadow: 0 0 0 0.25em hsla(var(--hue), 90%, 50%, 1);
+}
+.drop__btn:after {
+  border-top: 0.375em solid currentColor;
+  border-right: 0.375em solid transparent;
+  border-left: 0.375em solid transparent;
+  content: "";
+  display: block;
+  margin-inline-start: auto;
+  width: 0;
+  height: 0;
+  transform-origin: 50% 37.5%;
+  transition: transform var(--drop-trans-dur) var(--trans-ease-out);
+}
+.drop__btn[aria-expanded=true]:after {
+  transform: rotate(0.5turn);
+}
+.drop--collapsing, .drop--expanding, .drop__items {
+  overflow: hidden;
+}
+.drop__items {
+  height: 0;
+}
+.drop__items-inner {
+  visibility: hidden;
+}
+.drop--collapsing .drop__btn[aria-expanded=true] {
+  background-color: white;
+}
+.drop--collapsing .drop__btn[aria-expanded=true]:after {
+  transform: rotate(0);
+}
+.drop--expanding:before {
+  display: block;
+}
+.drop__items .drop__btn:hover, .drop__items .drop__btn:focus-visible {
+  background-color: hsl(var(--hue), 10%, 97.5%);
+  color: hsla(var(--hue), 90%, 50%);
+}
+.drop__items .drop__btn:focus-visible {
+  box-shadow: 0 0 0 0.25em hsla(var(--hue), 90%, 50%, 0);
+}
+.drop__items .drop__btn:after {
+  border: 0;
+  content: "✓";
+  display: none;
+  width: auto;
+  height: auto;
+}
+.drop__items .drop__btn--selected:after {
+  display: block;
+}
+.drop__btn[aria-expanded=true] ~ .drop__items {
+  height: auto;
+}
+.drop__btn[aria-expanded=true] ~ .drop__items .drop__items-inner {
+  visibility: visible;
+}
+.drop:has([aria-expanded=true]) {
+  height: auto;
+}
+.drop:has([aria-expanded=true]):before {
+  transform: translateY(calc(9em + var(--drop-flare-dist)));
+  transition: transform var(--drop-trans-dur) linear;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: hsl(var(--hue),10%,10%);
+    --fg: hsl(var(--hue),10%,90%);
+  }
+
+  .drop, .drop:after {
+    background-color: black;
+  }
+  .drop__btn {
+    background-color: hsl(var(--hue), 10%, 10%);
+  }
+  .drop__btn:hover, .drop__btn:focus-visible, .drop__btn[aria-expanded=true] {
+    background-color: hsl(var(--hue), 10%, 20%);
+  }
+  .drop__items .drop__btn:hover, .drop__items .drop__btn:focus-visible {
+    background-color: hsl(var(--hue), 10%, 15%);
+    color: hsla(var(--hue), 90%, 70%);
+  }
+  .drop--collapsing .drop__btn[aria-expanded=true] {
+    background-color: hsl(var(--hue), 10%, 10%);
+  }
+}
