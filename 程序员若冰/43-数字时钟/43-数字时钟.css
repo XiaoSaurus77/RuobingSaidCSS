@@ -1,0 +1,164 @@
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--hue: 223;
+	--bg: hsl(var(--hue), 10%, 90%);
+	--fg: hsl(var(--hue), 10%, 10%);
+	--trans-dur: 0.3s;
+	font-size: calc(24px + (48 - 24) * (100vw - 320px) / (2560 - 320));
+}
+
+body {
+	background-color: var(--bg);
+	background-image: linear-gradient(-45deg, hsla(var(--hue), 10%, 10%, 0.15), hsla(var(--hue), 10%, 10%, 0));
+	color: var(--fg);
+	display: flex;
+	font: 1em/1.5 "Helvetica Neue", Helvetica, sans-serif;
+	height: 100vh;
+	transition:
+		background-color var(--trans-dur),
+		color var(--trans-dur);
+}
+
+.clock {
+	background-color: hsl(var(--hue), 10%, 80%);
+	background-image: linear-gradient(-45deg, hsla(var(--hue), 10%, 10%, 0.3), hsla(var(--hue), 10%, 10%, 0));
+	border-radius: 0.125em;
+	box-shadow:
+		0 0 0.5em hsla(var(--hue), 10%, 10%, 0.5),
+		0 0 0.0625em hsla(var(--hue), 10%, 10%, 0.5) inset;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5em;
+	margin: auto;
+	width: 12em;
+	height: 5em;
+}
+
+.clock__digits {
+	--anim-dur: 0.5s;
+	background-color: hsl(var(--hue), 10%, 20%);
+	backface-visibility: hidden;
+	box-shadow:
+		0 0 0 1px hsl(var(--hue), 10%, 10%, 0.05) inset,
+		0 0 0.0625em hsl(var(--hue), 10%, 10%, 0.3) inset;
+	color: hsl(var(--hue), 10%, 95%);
+	font-size: 2em;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: background-color var(--trans-dur);
+}
+
+[data-prev] {
+	clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+}
+
+[data-prev]+[data-prev] {
+	transform: rotateX(180deg);
+	z-index: 1;
+}
+
+[data-prev]+[data-prev],
+[data-next]+[data-next] {
+	clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+}
+
+.clock__unit {
+	border-radius: 0.0625em;
+	box-shadow:
+		0 0 0 0.0625em hsl(0, 0%, 0%),
+		0 -0.0625em 0.125em 0.125em hsla(var(--hue), 10%, 10%, 0.5),
+		0 0.0625em 0.125em 0.125em hsla(var(--hue), 10%, 90%, 0.8);
+	perspective: 10em;
+	position: relative;
+	width: 3em;
+	height: 3em;
+}
+
+.clock__unit--active .clock__digits {
+	animation-duration: var(--anim-dur);
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+}
+
+.clock__unit--active [data-prev]:first-child {
+	animation-name: darken-prev;
+	animation-timing-function: ease-out;
+}
+
+.clock__unit--active [data-prev]+[data-prev] {
+	animation-name: flip-prev;
+}
+
+.clock__unit--active [data-prev]+[data-next] {
+	animation-name: flip-next;
+}
+
+.clock__unit--active [data-next]+[data-next] {
+	animation-name: lighten-next;
+	animation-timing-function: ease-in;
+}
+
+.clock__unit--pristine .clock__digits {
+	animation-duration: 0s;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: hsl(var(--hue), 10%, 30%);
+		--fg: hsl(var(--hue), 10%, 90%);
+	}
+}
+
+/* Animations */
+@keyframes darken-prev {
+
+	from,
+	50% {
+		filter: brightness(1);
+	}
+
+	to {
+		filter: brightness(0);
+	}
+}
+
+@keyframes flip-prev {
+	from {
+		transform: rotateX(0);
+	}
+
+	to {
+		transform: rotateX(180deg);
+	}
+}
+
+@keyframes flip-next {
+	from {
+		transform: rotateX(-180deg);
+	}
+
+	to {
+		transform: rotateX(0);
+	}
+}
+
+@keyframes lighten-next {
+	from {
+		filter: brightness(0);
+	}
+
+	50%,
+	to {
+		filter: brightness(1);
+	}
+}
