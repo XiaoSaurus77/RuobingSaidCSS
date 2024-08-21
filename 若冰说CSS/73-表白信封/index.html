@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="modal.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- 问答部分 -->
+    <div class="questionnaire" id="questionnaire">
+        <div class="top">
+            <div class="left">
+                <img src="./images/star.png" alt="">
+            </div>
+            <div class="right" id="textCount">
+                <span id="active">1</span> / 10题
+            </div>
+            <div class="middle">
+                <img src="./images/love.png" alt="">
+            </div>
+        </div>
+        <div class="bottom">
+            <div id="summary">
+                在这个浪漫的日子，让我们先玩一个问答小游戏吧，全部答对才可以开启表白信封哦！
+                <div class="submit">
+                    <button id="start" class="pink-button">开始</button>
+                </div>
+            </div>
+            <div id="question1" class="question-con">
+                <div class="question">1.认识的时间（请按照2024/8/1这种格式填写）</div>
+                <div class="answer">
+                    <div class="list">
+                        <input type="text" name="group1" id="option1">
+                    </div>
+                </div>
+            </div>
+            <div id="question2" class="question-con">
+                <div class="question">2.第一次见面时间（请按照2024/8/1这种格式填写）</div>
+                <div class="answer">
+                    <div class="list">
+                        <input type="text" name="group2" id="option1">
+                    </div>
+                </div>
+            </div>
+            <div id="question3" class="question-con">
+                <div class="question">3.第一次闹矛盾时间（请按照2024/8/1这种格式填写）</div>
+                <div class="answer">
+                    <div class="list">
+                        <input type="text" name="group3" id="option1">
+                    </div>
+                </div>
+            </div>
+            <div id="question4" class="question-con">
+                <div class="question">4.女朋友的鞋码是？</div>
+                <div class="answer">
+                    <div class="list">
+                        <input type="text" name="group4" id="option1">
+                    </div>
+                </div>
+            </div>
+            <div id="question5" class="question-con">
+                <div class="question">5.女朋友的身高体重是？</div>
+                <div class="answer">
+                    <div class="list">
+                        <div class="item">
+                            <input type="radio" name="group5" id="option1" value="option1">
+                            <label for="option1">155cm 47kg</label>
+                        </div>
+                        <div class="item">
+                            <input type="radio" name="group5" id="option2" value="option2">
+                            <label for="option2">156cm 48kg</label>
+                        </div>
+                        <div class="item">
+                            <input type="radio" name="group5" id="option3" value="option3">
+                            <label for="option3">158cm 46kg</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="question6" class="question-con">
+                <div class="question">6.以下几种食物女朋友最讨厌哪个？</div>
+                <div class="answer">
+                    <div class="list">
+                        <div class="item">
+                            <input type="radio" name="group6" id="option1" value="option1">
+                            <label for="option1">香菜</label>
+                        </div>
+                        <div class="item">
+                            <input type="radio" name="group6" id="option2" value="option2">
+                            <label for="option2">葱花</label>
+                        </div>
+                        <div class="item">
+                            <input type="radio" name="group6" id="option3" value="option3">
+                            <label for="option3">蒜</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="question7" class="question-con">
+                <div class="question">7.女朋友最喜欢的颜色？</div>
+                <div class="answer">
+                    <div class="list">
+                        <div class="item">
+                            <input type="radio" name="group7" id="option1" value="option1">
+                            <label for="option1">白色</label>
+                        </div>
+                        <div class="item">
+                            <input type="radio" name="group7" id="option2" value="option2">
+                            <label for="option2">蓝色</label>
+                        </div>
+                        <div class="item">
+                            <input type="radio" name="group7" id="option3" value="option3">
+                            <label for="option3">粉色</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="question8" class="question-con">
+                <div class="question">8.女朋友最喜欢的明星？</div>
+                <div class="answer">
+                    <div class="list">
+                        <input type="text" name="group8" id="option1">
+                    </div>
+                </div>
+            </div>
+            <div id="question9" class="question-con">
+                <div class="question">9.以下行为中，女朋友最喜欢的是？</div>
+                <div class="answer">
+                    <div class="list">
+                        <div class="item">
+                            <input type="radio" name="group9" id="option1" value="option1">
+                            <label for="option1">拥抱</label>
+                        </div>
+                        <div class="item">
+                            <input type="radio" name="group9" id="option2" value="option2">
+                            <label for="option2">亲吻</label>
+                        </div>
+                        <div class="item">
+                            <input type="radio" name="group9" id="option3" value="option3">
+                            <label for="option3">牵手</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="question10" class="question-con">
+                <div class="question">10.你的女性朋友约你吃饭，正确的做法是？</div>
+                <div class="answer">
+                    <div class="list">
+                        <div class="item">
+                            <input type="radio" name="group10" id="option1" value="option1">
+                            <label for="option1">不告诉女朋友，省的她想多了</label>
+                        </div>
+                        <div class="item">
+                            <input type="radio" name="group10" id="option2" value="option2">
+                            <label for="option2">主动与异性保持距离，委婉的拒绝，并把这件事告诉女朋友</label>
+                        </div>
+                        <div class="item">
+                            <input type="radio" name="group10" id="option3" value="option3">
+                            <label for="option3">告诉女朋友，征得女朋友的同意</label>
+                        </div>
+                        <div class="item">
+                            <input type="radio" name="group10" id="option4" value="option4">
+                            <label for="option4">带着女朋友一起去吃饭</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="question11" class="question-con">
+                <div>恭喜你完成作答，点击提交吧！</div>
+                <div class="submit">
+                    <button id="submit" class="pink-button">提交</button>
+                </div>
+            </div>
+            <div class="button">
+                <button id="prev">
+                    << 上一题</button>
+                        <button id="next">下一题 >></button>
+            </div>
+        </div>
+    </div>
+    <!-- 遮罩层 -->
+    <div class="mask" id="mask">
+        <div class="message-box" id="error">
+            <img src="./images/cry.png" alt="">
+            <span>啊哦~答错啦！返回重新作答吧[旺柴]</span>
+            <div class="back">
+                <button id="back" class="pink-button">返回</button>
+            </div>
+        </div>
+        <div class="message-box" id="correct">
+            <img src="./images/smile.png" alt="">
+            <span>恭喜~答对啦！去开启你的表白信封吧</span>
+            <div class="back">
+                <button id="confirm" class="pink-button">确定</button>
+            </div>
+        </div>
+    </div>
+    <div></div>
+    <!--信封部分-->
+    <div class="envelope" id="envelope">
+        <div class="top"></div>
+        <div class="heart"></div>
+        <div class="card">
+            <header class="letter-header">
+                <h1>亲爱的七夕快乐：</h1>
+            </header>
+            <main class="letter-body">
+                <p>在这个美好的日子里，我想与您分享一些想法...</p>
+                <p>希望您喜欢我的信件。</p>
+            </main>
+            <footer class="letter-footer">
+                <p>爱你的,</p>
+                <p>宝贝</p>
+            </footer>
+        </div>
+    </div>
+    <!--烟花部分-->
+    <canvas id='cas' style="background-color:rgba(0,5,24,1)"></canvas>
+    <!--音乐部分-->
+    <audio autoplay loop id="music">
+        <source src="music.mp3" type="audio/mpeg" />
+    </audio>
+    <iframe id="iframMusic" allow="autoplay" style="display:none" src="blank.mp3"></iframe>
+    <script src="fire.js"></script>
+</body>
+
+</html>
