@@ -1,0 +1,26 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>好玩的召唤按钮</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./45-好玩的召唤按钮.css">
+</head>
+
+<body>
+  <div class="buttons">
+    <button id="ghost"></button>
+    <button id="skull"></button>
+    <button id="devil"></button>
+    <button id="vampi"></button>
+    <button id="zombi"></button>
+    <div class="ghost"><span></span><span></span><span></span></div>
+    <div class="skull"><span></span><span></span><span></span></div>
+    <div class="devil"><span></span><span></span><span></span></div>
+    <div class="vampi"><span></span><span></span><span></span></div>
+    <div class="zombi"><span></span><span></span><span></span></div>
+  </div>
+  <script>
+    var buttons=document.querySelectorAll('button');for(var i=0;i<buttons.length;i++){buttons[i].addEventListener('click',function(e){e.preventDefault();this.classList.toggle('active')},false)}
+  </script>
+</html>

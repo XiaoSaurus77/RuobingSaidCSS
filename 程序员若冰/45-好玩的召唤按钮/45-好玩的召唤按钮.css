@@ -1,0 +1,270 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(315deg, #0d0a0b 0%, #607d8b 75%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-size: 5vmin;
+  font-family: Arial, Helvetica, serif;
+  text-align: center;
+  background-color: #4c4177;
+  background-image: linear-gradient(315deg, #4c4177 0%, #2a5470 74%);
+  background: url(https://assets.codepen.io/t-1/shapelined-Z1xxfm52Htc-unsplash.jpg) no-repeat center center fixed;
+}
+
+button {
+  outline: none;
+  margin: 0 2vmin;
+  position: relative;
+  height: 10vmin;
+  width: 10vmin;
+  cursor: pointer;
+  text-align: center;
+  font-size: 3.5vmin;
+  display: inline-block;
+  text-shadow: 0px -1px 1px #fff8;
+  transition: 0.1s ease-out;
+  box-shadow: inset 0 0 5px 0 rgb(255 255 255 / 50%), 0 0 0.1vmin 0.15vmin #2228, 0 0.5vmin 1vmin 0vmin #444c;
+  border: 0.25vmin solid #0008;
+  border-top-color: #505050;
+  border-bottom: 1.1vmin solid #555;
+  user-select: none;
+  border-radius: 100%;
+  background: linear-gradient(0deg, #fff, #949ea3);
+  float: left;
+}
+
+button:active,
+button.active {
+  color: #777;
+  border: 0.15vmin solid #9998;
+  box-shadow: inset 0 0 0.75vmin 0 #333, 0 0 3vmin 0.5vmin #fff;
+  transform: translate(0px, 0.35vmin);
+  height: 9.75vmin;
+}
+
+button:hover:active {
+  color: #ccc;
+}
+
+button:before {
+  color: #0006;
+  text-shadow: 0px -1px 1px #0004, 0px 1px 1px #fff;
+  background: transparent !important;
+}
+
+button:hover:before {
+  color: #000A;
+}
+
+
+#ghost {
+  background: linear-gradient(0deg, #0003, #fff8), #659AE0;
+  border-color: #436796;
+}
+
+#skull {
+  background: linear-gradient(0deg, #0003, #fff8), #EFEC40;
+  border-color: #9B9800;
+}
+
+#devil {
+  background: linear-gradient(0deg, #0003, #fff8), #C46A6A;
+  border-color: #A05D5D;
+}
+
+#vampi {
+  background: linear-gradient(0deg, #0003, #fff8), #c05cd1;
+  border-color: #8c4f97;
+}
+
+#zombi {
+  background: linear-gradient(0deg, #0003, #fff8), #82C43A;
+  border-color: #578720;
+}
+
+
+#ghost:before,
+.ghost span:before,
+.ghost span:after {
+  content: "\1F47B";
+  filter: grayscale(1) sepia(0.5) saturate(5.5) hue-rotate(175deg);
+}
+
+#skull:before,
+.skull span:before,
+.skull span:after {
+  content: "\01F480";
+  filter: grayscale(1) sepia(0.5) saturate(5.5) hue-rotate(10deg);
+}
+
+#devil:before,
+.devil span:before,
+.devil span:after {
+  content: "\1F479";
+  filter: grayscale(1) sepia(0.5) saturate(5.5) hue-rotate(330deg);
+}
+
+#vampi:before,
+.vampi span:before,
+.vampi span:after {
+  content: "\1F9DB";
+  filter: grayscale(1) sepia(0.5) saturate(5.5) hue-rotate(240deg);
+}
+
+#zombi:before,
+.zombi span:before,
+.zombi span:after {
+  content: "\1F9DF";
+  filter: grayscale(1) sepia(0.5) saturate(5.5) hue-rotate(40deg);
+}
+
+
+#ghost:active,
+#ghost.active {
+  box-shadow: inset 0 0.15vmin 0.5vmin 0 #333, 0 0 0.1vmin 0.15vmin #213a5a, 0 0 3vmin 0.5vmin #8babd6;
+}
+
+#skull:active,
+#skull.active {
+  box-shadow: inset 0 0.15vmin 0.5vmin 0 #333, 0 0 0.1vmin 0.15vmin #605f0c, 0 0 3vmin 0.5vmin #dfdd74;
+}
+
+#devil:active,
+#devil.active {
+  box-shadow: inset 0 0.15vmin 0.5vmin 0 #333, 0 0 0.1vmin 0.15vmin #5e2828, 0 0 3vmin 0.5vmin #c18989;
+}
+
+#vampi:active,
+#vampi.active {
+  box-shadow: inset 0 0.15vmin 0.5vmin 0 #333, 0 0 0.1vmin 0.15vmin #530360, 0 0 3vmin 0.5vmin #be7fc8;
+}
+
+#zombi:active,
+#zombi.active {
+  box-shadow: inset 0 0.15vmin 0.5vmin 0 #333, 0 0 0.1vmin 0.15vmin #264601, 0 0 3vmin 0.5vmin #aed286;
+}
+
+
+.buttons div {
+  position: absolute;
+  left: calc(calc(100vw - 80vmin) / 2);
+  width: 80vmin;
+  height: 80vmin;
+  top: 10vmin;
+  z-index: -1;
+  opacity: 0;
+  border-radius: 100%;
+  animation: move 10s linear 0s infinite;
+  transition: all 0.4s ease 0s;
+}
+
+.buttons div span:before,
+.buttons div span:after {
+  font-size: 10vmin;
+  width: 15vmin;
+  height: 15vmin;
+  float: left;
+  color: #0008;
+  text-shadow: 0px -1px 1px #0004, 0px 1px 1px #fff;
+  background: transparent !important;
+  animation: move 10s linear 0s reverse infinite;
+}
+
+#ghost.active~.ghost,
+#skull.active~.skull,
+#devil.active~.devil,
+#vampi.active~.vampi,
+#zombi.active~.zombi {
+  opacity: 0.85;
+  transition: all 0.4s ease 0s;
+}
+
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+div span {
+  top: 10%;
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+div span+span {
+  top: 70%;
+}
+
+div span+span+span {
+  top: 0%;
+  width: 3em;
+  height: 100%;
+  left: calc(50% - 1.5em);
+}
+
+
+.buttons div span:after {
+  float: right;
+}
+
+.buttons div span+span+span:after {
+  top: 75%;
+  position: absolute;
+  left: 0;
+}
+
+
+.buttons .skull,
+.buttons .skull span:before,
+.buttons .skull span:after {
+  animation-delay: 0.4s;
+  animation-duration: 9s;
+}
+
+.buttons .devil,
+.buttons .devil span:before,
+.buttons .devil span:after {
+  animation-delay: 0.8s;
+  animation-duration: 11s;
+}
+
+.buttons .vampi,
+.buttons .vampi span:before,
+.buttons .vampi span:after {
+  animation-delay: 1.2s;
+  animation-duration: 8s;
+}
+
+.buttons .zombi,
+.buttons .zombi span:before,
+.buttons .zombi span:after {
+  animation-delay: 1.6s;
+  animation-duration: 12s;
+}
+
+
+.buttons .skull,
+.buttons .vampi {
+  animation-direction: reverse;
+}
+
+.buttons .skull span:before,
+.buttons .skull span:after,
+.buttons .vampi span:before,
+.buttons .vampi span:after {
+  animation-direction: inherit;
+}
