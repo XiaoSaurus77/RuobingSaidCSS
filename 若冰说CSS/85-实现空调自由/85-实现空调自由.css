@@ -1,0 +1,347 @@
+/*** 
+pending to improve some details 
+***/
+
+.cuboid {
+	--height: 6;
+	--width: 6;
+	--depth: 6;
+	--hue: 240;
+	--sat: 10%;
+	--lum: 40%;
+	height: calc(var(--height) * 1vmin);
+	width: calc(var(--width) * 1vmin);
+	position: absolute;
+}
+
+.cuboid .side {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 100%;
+	width: 100%;
+	border-radius: 2px;
+	background: hsl(var(--hue), var(--sat), var(--lum));
+}
+
+.cuboid .side:nth-of-type(1) {
+	transform: translate3d(-50%, -50%, calc(var(--depth) * 0.5vmin));
+	--lum: 60%;
+}
+
+.cuboid .side:nth-of-type(2) {
+	transform: translate3d(-50%, -50%, calc(var(--depth) * -0.5vmin)) rotateY(180deg);
+}
+
+.cuboid .side:nth-of-type(3) {
+	width: calc(var(--depth) * 1vmin);
+	transform: translate(-50%, -50%) rotateY(90deg) translate3d(0, 0, calc(var(--width) * 0.5vmin));
+	--lum: 70%;
+}
+
+.cuboid .side:nth-of-type(4) {
+	width: calc(var(--depth) * 1vmin);
+	transform: translate(-50%, -50%) rotateY(-90deg) translate3d(0, 0, calc(var(--width) * 0.5vmin));
+	--lum: 70%;
+}
+
+.cuboid .side:nth-of-type(5) {
+	height: calc(var(--depth) * 1vmin);
+	transform: translate(-50%, -50%) rotateX(90deg) translate3d(0, 0, calc(var(--height) * 0.5vmin));
+	--lum: 20%;
+}
+
+.cuboid .side:nth-of-type(6) {
+	height: calc(var(--depth) * 1vmin);
+	transform: translate(-50%, -50%) rotateX(-90deg) translate3d(0, 0, calc(var(--height) * 0.5vmin));
+	--lum: 50%;
+}
+
+.cuboid .side:nth-of-type(7) {
+	height: calc(var(--depth) * 0.225vmin);
+	transform: translate(-50%, -50%) rotateX(-90deg) translate3d(0, 2.25vmin, calc(var(--height) * 0.5vmin));
+	--lum: 30%;
+}
+
+* {
+	transform-style: preserve-3d;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	perspective: 100vmin;
+	perspective-origin: bottom;
+	background: radial-gradient(circle at 50% 100%, #fff, #fff, #666);
+}
+
+.content {
+	width: 80vmin;
+	height: 50vmin;
+	/*background: #ff000030;*/
+	transform: rotateY(0deg) rotateX(0deg);
+}
+
+.box {
+	--width: 60;
+	--height: 15;
+}
+
+.ac {
+	left: 10vmin;
+	position: absolute;
+	z-index: 1;
+}
+
+.cuboid.box>.side:nth-of-type(1) {
+	clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 75%, 0% 100%);
+}
+
+.cuboid.box>.side:nth-of-type(3) {
+	clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 75% 100%, 0% 75%);
+}
+
+.cuboid.box>.side:nth-of-type(4) {
+	clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 25% 100%, 0% 100%);
+}
+
+.box>.side:nth-of-type(6) {
+	transform: translate(-50%, -50%) rotateX(-50deg) translate3d(0vmin, 3.2vmin, 4.75vmin);
+	background: linear-gradient(180deg,
+			hsl(var(--hue), var(--sat), var(--lum)) 1.1vmin,
+			#fff0 0 calc(100% - 3.15vmin),
+			hsl(var(--hue), var(--sat), var(--lum)) 0 calc(100% - 2.55vmin),
+			#fff0 0 calc(100% - 1vmin),
+			hsl(var(--hue), var(--sat), var(--lum)) 0 100%),
+		linear-gradient(90deg,
+			hsl(var(--hue), var(--sat), var(--lum)) 3vmin,
+			#fff0 3vmin calc(100% - 3vmin),
+			hsl(var(--hue), var(--sat), var(--lum)) 0 100%);
+}
+
+.box>.side:nth-of-type(6):before,
+.box>.side:nth-of-type(6):after {
+	content: "";
+	--lum: 60%;
+	position: absolute;
+	background: hsl(var(--hue), var(--sat), var(--lum));
+	width: 53.5vmin;
+	height: 1.5vmin;
+	top: 1.225vmin;
+	left: 3.25vmin;
+	transform-origin: 50% 75%;
+	transform: rotateX(0deg);
+	/*transition: transform 2s ease 0s;*/
+	animation: fanfan-move 8s ease-in-out 0s infinite;
+	animation-play-state: paused;
+}
+
+@keyframes fanfan-open {
+	100% {
+		transform: rotateX(-120deg);
+	}
+}
+
+@keyframes fanfan-close {
+	0% {
+		transform: rotateX(-120deg);
+	}
+
+	100% {
+		transform: rotateX(0deg);
+	}
+}
+
+@keyframes fanfan-move {
+
+	0%,
+	100% {
+		transform: rotateX(-120deg);
+	}
+
+	50% {
+		transform: rotateX(-40deg);
+	}
+}
+
+#btn-off:checked~.content .ac .box>.side:nth-child(6):before,
+#btn-off:checked~.content .ac .box>.side:nth-child(6):after {
+	animation: fanfan-close 4s ease-in-out 0s 1;
+	animation-fill-mode: forwards;
+}
+
+#btn-hot:checked~.content .ac .box>.side:nth-child(6):before,
+#btn-hot:checked~.content .ac .box>.side:nth-child(6):after,
+#btn-cold:checked~.content .ac .box>.side:nth-child(6):before,
+#btn-cold:checked~.content .ac .box>.side:nth-child(6):after {
+	animation: fanfan-open 4s ease-in-out 0s 1;
+	animation-fill-mode: forwards;
+}
+
+#btn-hot:checked~#btn-fan:checked~.content .ac .box .side:nth-child(6):before,
+#btn-hot:checked~#btn-fan:checked~.content .ac .box .side:nth-child(6):after,
+#btn-cold:checked~#btn-fan:checked~.content .ac .box .side:nth-child(6):before,
+#btn-cold:checked~#btn-fan:checked~.content .ac .box .side:nth-child(6):after {
+	animation: fanfan-move 8s ease-in-out 0s infinite;
+	/*animation-play-state: running;*/
+}
+
+.box>.side:nth-of-type(6):after {
+	top: 3.5vmin;
+}
+
+label {
+	transform: translateZ(3vmin);
+	position: absolute;
+	right: 1vmin;
+	top: 0.85vmin;
+	/*background: red;*/
+	height: 2.825vmin;
+	min-width: 2.825vmin;
+	cursor: pointer;
+	font-size: 1.75vmin;
+	transition: 0.4s ease 0s;
+}
+
+label[for="btn-cold"] {
+	top: 4.2vmin;
+	/*background: cyan;*/
+}
+
+label[for="btn-fan"] {
+	top: 7.5vmin;
+	/*background: gray;*/
+}
+
+label[for="btn-off"] {
+	background: repeating-linear-gradient(90deg, #4caf50 0 3px, #fff0 0 7px);
+	background: #fff0;
+	top: 9.5vmin;
+	transform: translateZ(3.5vmin);
+}
+
+#btn-hot:checked~.content .ac .box label[for="btn-off"] {
+	top: 0.85vmin;
+}
+
+#btn-cold:checked~.content .ac .box label[for="btn-off"] {
+	top: 4.2vmin;
+}
+
+#btn-off:checked~.content .ac .box label[for="btn-off"] {
+	opacity: 0;
+	pointer-events: none;
+}
+
+label.cuboid {
+	--width: 2.8;
+	--height: 2.8;
+	--depth: 1.5;
+}
+
+label.cuboid .side:first-child {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 0;
+	background: #9794a9;
+}
+
+#btn-hot:checked~.content .ac .box label[for="btn-hot"],
+#btn-cold:checked~.content .ac .box label[for="btn-cold"],
+#btn-fan:checked~.content .ac .box label[for="btn-fan"] {
+	transform: translateZ(2.5vmin);
+}
+
+#btn-hot:checked~.content .ac .box label[for="btn-hot"] .side:nth-child(1) {
+	background: #f59;
+	box-shadow: 0 0 6px 1px #f00;
+}
+
+#btn-cold:checked~.content .ac .box label[for="btn-cold"] .side:nth-child(1) {
+	background: #aeffff;
+	box-shadow: 0 0 6px 1px cyan;
+}
+
+#btn-fan:checked~.content .ac .box label[for="btn-fan"] .side:nth-child(1) {
+	background: #fff;
+	box-shadow: 0 0 6px 1px #fff;
+}
+
+input {
+	display: none;
+}
+
+.air {
+	/*background: green;*/
+	position: absolute;
+	width: 66%;
+	height: 150%;
+	left: 17%;
+	transform-origin: 50% 0;
+	transform: rotateX(25deg) translateZ(0.5vmin);
+	top: 27%;
+	z-index: -1;
+	/*border-top: 2px solid black;*/
+}
+
+.air:before,
+.air:after {
+	--air: #00f3;
+	position: absolute;
+	width: 100%;
+	height: 0%;
+	min-height: 0;
+	background: repeating-linear-gradient(90deg,
+			#fff0 0 3vmin,
+			var(--air) 4.15vmin);
+	content: "";
+	filter: blur(10px);
+	transition: all 1.5s ease 2s;
+	transform: translateZ(1vmin);
+	background-size: 200% 100%;
+	background-repeat: repeat;
+	background-position: 0% 0;
+	animation: air-fan2 40s linear 0s infinite alternate;
+}
+
+.air:after {
+	transform: translateZ(-1vmin) rotate(180deg);
+}
+
+#btn-hot:checked~#btn-fan:checked~.content .air,
+#btn-cold:checked~#btn-fan:checked~.content .air {
+	animation: air-fan 4s ease-in-out 0s infinite alternate;
+}
+
+@keyframes air-fan {
+	100% {
+		transform: rotateX(80deg);
+		background-position: 100% 0;
+	}
+}
+
+@keyframes air-fan2 {
+	100% {
+		background-position: 100% 0;
+	}
+}
+
+#btn-hot:checked~.content .air:before,
+#btn-hot:checked~.content .air:after {
+	min-height: 80vmin;
+	--air: rgb(255, 55, 0);
+}
+
+#btn-cold:checked~.content .air:before,
+#btn-cold:checked~.content .air:after {
+	min-height: 80vmin;
+	--air: rgba(16, 205, 226, 0.788);
+}
