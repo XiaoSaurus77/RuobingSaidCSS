@@ -1,0 +1,262 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background: rgb(244 246 248);
+    background: linear-gradient(35deg, rgb(198 206 217) 0%, rgba(199, 207, 217, 0) 40%), linear-gradient(90deg, rgb(244 246 248) 0%, rgb(199 207 217) 100%);
+    margin: 0;
+    font-family: 'poppins', sans-serif;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-family: monospace;
+    color: #888;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.footer a {
+    color: #888;
+}
+
+.main,
+.main * {
+    transition: all 0.2s ease-in-out;
+}
+
+.main {
+    --window-size: 330px;
+    --lantern-size: calc(var(--window-size) / 2.7);
+    scale: 1;
+    width: var(--window-size);
+    height: var(--window-size);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 4px;
+    box-shadow:
+        0 -70px 8px 10000px rgba(0, 0, 0, 0.7),
+        inset 0 -70px 8px 0 rgba(0, 0, 0, 0.1),
+        inset 0 0 calc(var(--window-size) / 2) calc(var(--window-size) / 5) rgba(0, 0, 0, 1),
+        inset 0 calc(var(--window-size) / -12) calc(var(--window-size) / 10) 0 rgba(0, 0, 0, 0.2);
+}
+
+.on.main {
+    box-shadow:
+        0 -70px 8px 1000px rgba(0, 0, 0, 0),
+        inset 0 -70px 8px 0 rgba(0, 0, 0, 0.2),
+        inset 0 0 calc(var(--window-size) / 2) 0 rgba(0, 0, 0, 1),
+        inset 0 calc(var(--window-size) / -12) calc(var(--window-size) / 10) 0 rgba(0, 0, 0, 0.2);
+}
+
+.shadow {
+    height: 16%;
+    width: 100%;
+    position: absolute;
+    bottom: 4%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    background: radial-gradient(rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0) 70%);
+    opacity: 0;
+}
+
+.on .shadow {
+    opacity: 1;
+}
+
+.lantern {
+    width: var(--lantern-size);
+    height: calc(var(--lantern-size)*1.3);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 10%;
+    margin: auto;
+    filter: brightness(0.4);
+    cursor: pointer;
+}
+
+.on .lantern {
+    filter: brightness(1);
+}
+
+.leaf {
+    --val-x: calc(var(--lantern-size)/3);
+    --val-y: calc(var(--lantern-size)/6);
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 7%;
+    bottom: 12%;
+    background: #fff;
+    border-radius: calc(var(--lantern-size) / 2.7);
+
+    box-shadow:
+        inset 0 0px 1px 1px rgba(0, 0, 0, 0.1),
+        inset 0 0px 2px 0px rgba(0, 0, 0, 0.2),
+        inset 0 60px 10px -40px rgba(255, 255, 255, 0),
+        inset 0 0px 140px 0px rgba(0, 0, 0, 0.5),
+        inset 0 -60px 10px -40px rgba(0, 0, 0, 0.1),
+        inset 0 var(--val-x) calc(0.5 * var(--val-x)) calc(-0.8*var(--val-x)) rgba(0, 0, 0, 1),
+        inset 0 calc(-1*var(--val-x)) calc(0.5 * var(--val-x)) calc(-0.9*var(--val-x)) rgba(0, 0, 0, 1);
+}
+
+.on .leaf {
+    box-shadow:
+        inset 0 0px 1px 1px rgba(0, 0, 0, 0.1),
+        inset 0 0px 2px 0px rgba(0, 0, 0, 0.2),
+        inset 0 60px 10px -40px rgba(255, 255, 255, 0.8),
+        inset 0 0px 14px 0px rgba(0, 0, 0, 0.5),
+        inset 0 -60px 10px -40px rgba(0, 0, 0, 0.1),
+        inset 0 var(--val-x) calc(0.5 * var(--val-x)) calc(-0.8*var(--val-x)) rgba(0, 0, 0, 1),
+        inset 0 calc(-1*var(--val-x)) calc(0.5 * var(--val-x)) calc(-0.9*var(--val-x)) rgba(0, 0, 0, 1);
+}
+
+.leaf>.leaf {
+    left: 0;
+    right: 0;
+    top: 0%;
+    bottom: 0%;
+    border-radius: 40%;
+}
+
+.leaf>.leaf {
+    scale: 0.95 1;
+}
+
+.leaf>.leaf>.leaf {
+    scale: 0.87 1;
+}
+
+.leaf>.leaf>.leaf>.leaf {
+    scale: 0.8 1;
+}
+
+.leaf>.leaf>.leaf>.leaf>.leaf {
+    scale: 0.7 1;
+}
+
+.leaf>.leaf>.leaf>.leaf>.leaf>.leaf {
+    scale: 0.54 1;
+}
+
+.leaf>.leaf>.leaf>.leaf>.leaf>.leaf>.leaf {
+    scale: 0.07 1;
+}
+
+svg#Layer_1 {
+    width: 100%;
+    height: 70%;
+    left: -20%;
+    position: absolute;
+    filter: brightness(0.2);
+    overflow: visible;
+}
+
+.on svg#Layer_1 {
+    filter: brightness(1);
+}
+
+svg#Layer_1>* {
+    filter: drop-shadow(-100px 10px 10px rgba(0, 0, 0, 0));
+}
+
+.on svg#Layer_1>* {
+    filter: drop-shadow(-100px 10px 10px rgba(0, 0, 0, 1));
+}
+
+.top {
+    background: rgb(18, 17, 17);
+    background: linear-gradient(90deg, rgba(18, 17, 17, 1) 0%, rgba(80, 80, 80, 1) 20%, rgba(20, 19, 19, 1) 31%, rgba(31, 30, 30, 1) 42%, rgba(122, 122, 122, 1) 55%, rgba(114, 114, 114, 1) 60%, rgba(108, 108, 108, 1) 61%, rgba(27, 26, 26, 1) 70%, rgba(27, 26, 26, 1) 81%, rgba(69, 69, 69, 1) 90%, rgba(27, 26, 26, 1) 97%);
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 22%;
+    width: 16%;
+    height: 3%;
+    border-radius: 16%;
+    filter: brightness(0.2);
+}
+
+.on .top {
+    filter: brightness(1);
+}
+
+.top-line {
+    background: rgb(18, 17, 17);
+    box-shadow:
+        inset 1px 0 1px 0px rgb(18, 17, 17),
+        inset 1px 0 2px 0px rgba(226, 226, 226, 1),
+        inset 0 0 0 3px rgb(18, 17, 17);
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0%;
+    width: 0.7%;
+    height: 14%;
+    filter: brightness(0.2);
+}
+
+.on .top-line {
+    filter: brightness(1);
+}
+
+.top-circle {
+    background: transparent;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 14%;
+    box-shadow:
+        0px -1px 1px 0.5px rgba(226, 226, 226, 0.7),
+        0px 1.5px 1px 0.5px rgb(226, 226, 226),
+        -0.5px -0.5px 0.5px 3px rgb(18, 17, 17),
+        0px 0px 1px 3px rgb(226, 226, 226),
+        0 0 0 3px rgb(18, 17, 17);
+    width: 8%;
+    height: 8%;
+    border-radius: 50%;
+    filter: brightness(0.2);
+}
+
+.on .top-circle {
+    filter: brightness(1);
+}
+
+.bottom {
+    background: rgb(18, 17, 17);
+    background: linear-gradient(90deg, rgba(18, 17, 17, 1) 0%, rgba(80, 80, 80, 1) 20%, rgba(20, 19, 19, 1) 31%, rgba(31, 30, 30, 1) 42%, rgba(122, 122, 122, 1) 55%, rgba(114, 114, 114, 1) 60%, rgba(108, 108, 108, 1) 61%, rgba(27, 26, 26, 1) 70%, rgba(27, 26, 26, 1) 81%, rgba(69, 69, 69, 1) 90%, rgba(27, 26, 26, 1) 97%);
+    filter: brightness(0.4);
+    transform: matrix3d(1, 0, 0.00, 0, 0.00, 0.71, 0.71, 0, 0, -0.71, 0.71, 0, 0, 0, 0, 1);
+    -webkit-transform: matrix3d(1, 0, 0.00, 0, 0.00, 0.71, 0.71, 0, 0, -0.71, 0.71, 0, 0, 0, 0, 1);
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 62.4%;
+    width: 14%;
+    height: 2.5%;
+    border-radius: 16%;
+    filter: brightness(0.2);
+}
+
+.on .bottom {
+    filter: brightness(1);
+}
