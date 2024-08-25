@@ -1,0 +1,264 @@
+body {
+	overflow: hidden;
+}
+
+.wrapper {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #20206a;
+	background: linear-gradient(#20206a 40%, #0e0e31 90%);
+	overflow: hidden;
+}
+
+p {
+	text-align: center;
+	padding-bottom: 40%;
+	font-size: 1.3em;
+	color: lemonchiffon;
+	font-family: sans-serif;
+	font-family: "Crimson Text", serif;
+	text-transform: uppercase;
+	pointer-events: none;
+	animation: appleGrow 500ms ease-in-out;
+}
+
+.apple_1 {
+	/* GREEN */
+	--lightColor: #83ff6f;
+	--darkColor: #31991e;
+}
+
+.apple_2 {
+	/* RED */
+	--lightColor: #ed4f4f;
+	--darkColor: #480707;
+}
+
+.apple_3 {
+	/* YELLOW */
+	--lightColor: #f9ff6f;
+	--darkColor: #998b1e;
+}
+
+.apple_0,
+.apple_4 {
+	/* RED-YELLOW */
+	--lightColor: #ffa66f;
+	--darkColor: #721010;
+}
+
+.appleDiv {
+	position: absolute;
+	width: 40vh;
+	height: 40vh;
+	top: 50%;
+	left: 50%;
+	margin-left: -20vh;
+	margin-top: -10vh;
+	background-color: greenyellow;
+	cursor: pointer;
+	background: radial-gradient(circle,
+			var(--lightColor) 10%,
+			var(--darkColor) 100%);
+	border-radius: 50% 50% 50% 50% / 38% 38% 62% 62%;
+	box-shadow: -0.8vh 0vh 0.8vh var(--lightColor) inset,
+		-2vh -2vh 6vh rgba(0, 0, 0, 0.4) inset;
+	animation: appleGrow 200ms ease-in-out;
+	transition: filter 200ms linear 0s;
+}
+
+.appleDiv:hover {
+	filter: brightness(120%);
+}
+
+.appleDiv div {
+	pointer-events: none;
+}
+
+.appleDiv .shadowDiv {
+	position: absolute;
+	width: 60%;
+	height: 20%;
+	top: 6%;
+	left: 20%;
+	border-radius: 50%;
+	filter: blur(2vh);
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.appleDiv .shadowDiv::after {
+	content: "";
+	position: absolute;
+	width: 40%;
+	height: 100%;
+	top: 160%;
+	left: -20%;
+	background-color: white;
+	opacity: 0.6;
+}
+
+.appleDiv::after,
+.appleDiv::before {
+	content: "";
+	position: absolute;
+	width: 10%;
+	height: 30%;
+	top: -10%;
+	left: 45%;
+	transform: scale(1, -1);
+	background-color: #573406;
+	box-shadow: -2vh 0 0.8vh rgba(0, 0, 0, 0.4) inset;
+	border-radius: 4vh;
+	clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.appleDiv::after {
+	transform: scale(1, -0.5) rotate(-45deg) translate(200%, -15%);
+	background: linear-gradient(0deg,
+			rgba(0, 0, 0, 0) 20%,
+			rgba(0, 0, 0, 1) 100%);
+	opacity: 0.1;
+	box-shadow: none;
+}
+
+.no_2::after,
+.no_3::after {
+	display: none;
+}
+
+.appleDiv .leafDiv {
+	--scaleVar: scale(1, 1);
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	top: -4%;
+	left: 53%;
+	background-color: #40721b;
+	border-radius: 50% 0 50% 0;
+	transform-origin: top left;
+	transform: var(--scaleVar) rotate(-12deg);
+	border-radius: 30% 70% 0% 100% / 30% 100% 0% 70%;
+	background: linear-gradient(45deg, #386516 48%, #40721b 50%);
+	box-shadow: 0.4vh -0.4vh 0.4vh rgba(255, 255, 255, 0.3) inset;
+	filter: drop-shadow(-2vh 2vh 2vh rgba(0, 0, 0, 0.3));
+	animation: leafAnim 3000ms ease-in-out infinite;
+	animation: leafGrow 400ms ease-in-out;
+}
+
+.appleDiv .leaf_0 {
+	display: none;
+}
+
+.appleDiv .leaf_1 {
+	--scaleVar: scale(-1, 1);
+}
+
+.appleDiv .leaf_2 {
+	--scaleVar: scale(1, 1);
+	left: 48%;
+}
+
+.appleDiv .leaf_3 {
+	--scaleVar: scale(0.8, 0.8);
+	left: 48%;
+}
+
+.appleDiv .leaf_4 {
+	--scaleVar: scale(-0.8, 0.8);
+}
+
+.appleDiv .leafColor_1,
+.appleDiv .leafColor_0 {
+	background-color: #40721b;
+	background: linear-gradient(45deg, #386516 48%, #40721b 50%);
+}
+
+.appleDiv .leafColor_2 {
+	background-color: #5d7b26;
+	background: linear-gradient(45deg, #465d1c 48%, #5d7b26 50%);
+}
+
+.appleDiv .leafColor_3 {
+	background-color: #7b5726;
+	background: linear-gradient(45deg, #60441e 48%, #7b5726 50%);
+}
+
+.appleDiv .leafColor_4 {
+	background-color: #2e7739;
+	background: linear-gradient(45deg, #276430 48%, #2e7739 50%);
+}
+
+@keyframes leafAnim {
+	0% {
+		transform: var(--scaleVar) rotate(-12deg);
+	}
+
+	20% {
+		transform: var(--scaleVar) rotate(-20deg);
+	}
+
+	30% {
+		transform: var(--scaleVar) rotate(-16deg);
+	}
+
+	45% {
+		transform: var(--scaleVar) rotate(-25deg);
+	}
+
+	50% {
+		transform: var(--scaleVar) rotate(-25deg);
+	}
+
+	60% {
+		transform: var(--scaleVar) rotate(-12deg);
+	}
+
+	100% {
+		transform: var(--scaleVar) rotate(-12deg);
+	}
+}
+
+@keyframes leafGrow {
+	0% {
+		transform: scale(0, 0) rotate(-40deg);
+	}
+
+	25% {
+		transform: scale(0, 0) rotate(-40deg);
+	}
+
+	70% {
+		transform: var(--scaleVar) rotate(-40deg);
+	}
+
+	90% {
+		transform: var(--scaleVar) rotate(-6deg);
+	}
+
+	100% {
+		transform: var(--scaleVar) rotate(-12deg);
+	}
+}
+
+@keyframes appleGrow {
+	0% {
+		transform: scale(0);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes destroyApple {
+	0% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0);
+	}
+}
