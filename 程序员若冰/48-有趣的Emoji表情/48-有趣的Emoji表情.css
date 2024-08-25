@@ -1,0 +1,625 @@
+body {
+  background-color: #2D303A;
+  overflow: hidden;
+}
+
+.wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.wrapper .linkDiv {
+  position: absolute;
+  bottom: 10px;
+  font-size: 1em;
+  color: #ffffff;
+  font-family: sans-serif;
+}
+
+.wrapper .linkDiv a {
+  color: #5dadec;
+  text-decoration: none;
+}
+
+.wrapper .linkDiv a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  margin-left: 9.4em;
+  width: 0;
+  height: 100%;
+  border-bottom: 2px solid #5dadec;
+  transition: width 300ms ease-out 0s;
+}
+
+.wrapper .linkDiv a:hover::after {
+  width: 7.6em;
+  transition: width 300ms ease-out 0s;
+}
+
+svg {
+  position: relative;
+  width: 10em;
+  transition: width 200ms ease-in-out 0s;
+}
+
+svg:hover {
+  width: 14em;
+  transition: width 200ms ease-in-out 0s;
+}
+
+#eye_1,
+#eye_2 {
+  animation: animEyes_1 1000ms infinite;
+  transform-origin: top center;
+  transform-box: fill-box;
+}
+
+#mouth_1 {
+  animation: animMouth_1 1000ms infinite;
+}
+
+#head_1 {
+  animation: animHead_1 1000ms infinite;
+  transform-origin: top center;
+  transform-box: fill-box;
+}
+
+@keyframes animEyes_1 {
+  0% {
+    transform: rotate(0) scale(0.8);
+  }
+
+  40% {
+    transform: rotate(0) scale(0.8);
+  }
+
+  50% {
+    transform: rotate(0) scale(0.5);
+  }
+
+  58% {
+    transform: rotate(3deg) scale(1);
+  }
+
+  67% {
+    transform: rotate(-5deg);
+  }
+
+  75% {
+    transform: rotate(7deg) scale(1);
+  }
+
+  87% {
+    transform: rotate(-5deg);
+  }
+
+  94% {
+    transform: rotate(3deg);
+  }
+
+  100% {
+    transform: rotate(0) scale(0.8);
+  }
+}
+
+@keyframes animMouth_1 {
+  0% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3%) scale(1.1, 1);
+  }
+
+  62% {
+    transform: translateY(8%) scale(0.8, 1);
+  }
+
+  84% {
+    transform: translateY(8%) scale(1, 0.8);
+  }
+
+  92% {
+    transform: translateY(-2%) scale(0.8, 1);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes animHead_1 {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  30% {
+    transform: scale(1, 1);
+  }
+
+  40% {
+    transform: scale(1.05, 0.95);
+  }
+
+  50% {
+    transform: scale(0.95, 1.05);
+  }
+
+  60% {
+    transform: scale(1, 1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+#tear_5,
+#tear_6 {
+  animation: tearAnim_5 1000ms infinite;
+  transform-origin: bottom right;
+  transform-box: fill-box;
+}
+
+#tear_6 {
+  transform-origin: bottom left;
+  animation-name: tearAnim_6;
+}
+
+#head_5 {
+  animation: animHead_5 300ms infinite;
+  transform-origin: top center;
+  transform-box: fill-box;
+}
+
+#brow_5,
+#brow_6 {
+  animation: browAnim_5 500ms infinite;
+  transform-origin: bottom right;
+  transform-box: fill-box;
+}
+
+#brow_6 {
+  animation-name: browAnim_6;
+}
+
+#mouth_5,
+#mouth_6 {
+  animation: mouthAnim_5 1000ms infinite;
+  transform-origin: bottom center;
+  transform-box: fill-box;
+}
+
+@keyframes tearAnim_5 {
+  0% {
+    transform: scale(0) rotate(-45deg) translate(0, 0);
+  }
+
+  50% {
+    transform: scale(1) rotate(0) translate(0, 0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1) rotate(0) translate(0, -100%);
+    opacity: 0;
+  }
+}
+
+@keyframes tearAnim_6 {
+  0% {
+    transform: scale(0) rotate(45deg) translate(0, 0);
+  }
+
+  50% {
+    transform: scale(1) rotate(0) translate(0, 0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1) rotate(0) translate(0, -100%);
+    opacity: 0;
+  }
+}
+
+@keyframes animHead_5 {
+  0% {
+    transform: scale(1.05, 0.95);
+  }
+
+  50% {
+    transform: scale(0.95, 1.05);
+  }
+
+  100% {
+    transform: scale(1.05, 0.95);
+  }
+}
+
+@keyframes browAnim_5 {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+
+  50% {
+    transform: translate(0, 40%) rotate(8deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+
+@keyframes browAnim_6 {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+
+  50% {
+    transform: translate(0, 30%) rotate(-6deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+
+@keyframes mouthAnim_5 {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+
+  16% {
+    transform: scale(0.8, 1.2) translateY(0);
+  }
+
+  33% {
+    transform: scale(1, 1) translateY(0.1em);
+  }
+
+  49% {
+    transform: scale(0.8, 1.2) translateY(0.1em);
+  }
+
+  66% {
+    transform: scale(1, 1) translateY(0.1em);
+  }
+
+  82% {
+    transform: scale(0.8, 1.2) translateY(0);
+  }
+
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+#eye_3,
+#eye_4 {
+  animation: eyeAnim_3 1500ms infinite;
+  transform-origin: top center;
+  transform-box: fill-box;
+}
+
+#tounge_3 {
+  animation: toungeAnim_3 1500ms infinite;
+  transform-origin: top center;
+  transform-box: fill-box;
+}
+
+#mouth_3 {
+  animation: mouthAnim_3 1500ms infinite;
+  transform-origin: bottom center;
+  transform-box: fill-box;
+}
+
+#head_3 {
+  animation: animHead_3 1500ms infinite;
+  transform-origin: top center;
+  transform-box: fill-box;
+}
+
+@keyframes eyeAnim_3 {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  15% {
+    transform: scale(1.2, 0.1);
+  }
+
+  20% {
+    transform: scale(1.2, 0.1);
+  }
+
+  35% {
+    transform: scale(1, 1);
+  }
+
+  40% {
+    transform: scale(1, 1);
+  }
+
+  45% {
+    transform: scale(1.2, 0.1);
+  }
+
+  50% {
+    transform: scale(1.2, 0.1);
+  }
+
+  65% {
+    transform: scale(1, 1);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes toungeAnim_3 {
+  0% {
+    transform: translateY(50%) scale(1, 0.6);
+  }
+
+  50% {
+    transform: translateY(2%) scale(0.9, 1.2);
+  }
+
+  100% {
+    transform: translateY(50%) scale(1, 0.6);
+  }
+}
+
+@keyframes mouthAnim_3 {
+  0% {
+    transform: scale(1, 1) translateY(20%);
+  }
+
+  50% {
+    transform: scale(1.1, 0.8) translateY(40%);
+  }
+
+  100% {
+    transform: scale(1, 1) translateY(20%);
+  }
+}
+
+@keyframes animHead_3 {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+
+  50% {
+    transform: scale(1.05, 0.95) translateY(10%);
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+#eye_7,
+#eye_8 {
+  animation: animEyes_7 1500ms infinite;
+}
+
+#mouth_7 {
+  animation: animMouth_7 1500ms infinite;
+}
+
+#head_7 {
+  animation: animHead_7 1500ms infinite;
+  transform-origin: top center;
+  transform-box: fill-box;
+}
+
+@keyframes animEyes_7 {
+  0% {
+    transform: translate(-3%, 0);
+  }
+
+  16% {
+    transform: translate(3%, 0);
+  }
+
+  33% {
+    transform: translate(-3%, 0);
+  }
+
+  49% {
+    transform: translate(5%, -5%);
+  }
+
+  66% {
+    transform: translate(-5%, -5%);
+  }
+
+  82% {
+    transform: translate(3%, 0);
+  }
+
+  100% {
+    transform: translate(-3%, 0);
+  }
+}
+
+@keyframes animMouth_7 {
+  0% {
+    transform: translateX(-2%);
+  }
+
+  16% {
+    transform: translateX(2%);
+  }
+
+  33% {
+    transform: translateX(-2%);
+  }
+
+  49% {
+    transform: translateX(3%);
+  }
+
+  66% {
+    transform: translateX(-3%);
+  }
+
+  82% {
+    transform: translateX(2%);
+  }
+
+  100% {
+    transform: translateX(-2%);
+  }
+}
+
+@keyframes animHead_7 {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  33% {
+    transform: scale(1, 1);
+  }
+
+  66% {
+    transform: scale(1.05, 0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+#mouth_9,
+#mouth_0 {
+  animation: mouthAnim_9 1200ms infinite;
+  transform-origin: top center;
+  transform-box: fill-box;
+}
+
+#mouth_0 {
+  animation-name: mouthAnim_0;
+}
+
+#brow_9,
+#brow_0 {
+  animation: browAnim_9 1200ms infinite;
+  transform-origin: top center;
+  transform-box: fill-box;
+}
+
+#brow_0 {
+  animation-name: browAnim_0;
+}
+
+#eye_9,
+#eye_0 {
+  animation: eyeAnim_9 1200ms infinite;
+  transform-origin: top center;
+  transform-box: fill-box;
+}
+
+#head_9 {
+  animation: animHead_9 300ms infinite;
+  transform-origin: top center;
+  transform-box: fill-box;
+}
+
+@keyframes mouthAnim_9 {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+
+  50% {
+    transform: scale(1.2, 0.8) translateY(10%);
+  }
+
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+@keyframes mouthAnim_0 {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+
+  50% {
+    transform: scale(1.2, 0.8) translateY(-20%);
+  }
+
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+@keyframes browAnim_9 {
+  0% {
+    transform: rotate(0) translateY(0);
+  }
+
+  50% {
+    transform: rotate(8deg) translateY(-40%);
+  }
+
+  100% {
+    transform: rotate(0) translateY(0);
+  }
+}
+
+@keyframes browAnim_0 {
+  0% {
+    transform: rotate(0) translateY(0);
+  }
+
+  50% {
+    transform: rotate(-8deg) translateY(-40%);
+  }
+
+  100% {
+    transform: rotate(0) translateY(0);
+  }
+}
+
+@keyframes eyeAnim_9 {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-40%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes animHead_9 {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+
+  50% {
+    transform: scale(1.05, 0.95) translateY(4%);
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
