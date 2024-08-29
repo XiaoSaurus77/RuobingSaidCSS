@@ -1,0 +1,195 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #efebe9;
+  --base: 38, 100%, 80%;
+  --contour: 38, 100%, 25%;
+  --eye-base: 16, 22%, 52%;
+  --eye-contour: 13, 18%, 20%;
+  --eye-pupil: 0, 0%, 0%;
+  --eye-pupil-contour: 13, 23%, 19%;
+  --bottom-lip: hsla(var(--contour), 0.1);
+  --upper-lip: hsla(var(--contour), 0.15);
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+body.dark {
+  --bg-color: #263238;
+  --base: 219, 15%, 43%;
+  --contour: 219, 15%, 5%;
+  --bottom-lip: rgba(255, 255, 255, 0.15);
+  --upper-lip: rgba(255, 255, 255, 0.05);
+}
+
+button {
+  font-size: inherit;
+  background: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.toggle {
+  position: relative;
+  width: 10em;
+  height: 10em;
+  border-radius: 100%;
+  background-color: hsl(var(--base));
+  background-image: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.45) 10%, rgba(255, 255, 255, 0) 60%), radial-gradient(hsla(var(--contour), 0) 45%, hsla(var(--contour), 0.8) 100%);
+  background-size: 80% 80%, 100% 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 25%, top left;
+  box-shadow: -0.5em 0 0.5em rgba(255, 255, 255, 0.5) inset, 0 0 1em 0.25em hsla(var(--contour), 0.3);
+  font-size: 1rem;
+}
+
+.eye {
+  position: absolute;
+  top: 36.2%;
+  width: 1.8em;
+  height: 1.25em;
+  background-color: #fff;
+  border-radius: 50%/50% 60% 40% 50%;
+  overflow: hidden;
+  box-shadow: 0 0 0.1em 0.02em rgba(0, 0, 0, 0.5) inset, 0 0 0.3em 0.1em hsla(var(--contour), 0.25), 0 -0.2em 0.2em rgba(255, 255, 255, 0.35), 0 -0.4em 0.2em hsla(var(--contour), 0.45), 0 -0.5em 1em 1em hsla(var(--contour), 0.45);
+}
+
+.eye-left {
+  left: 20.6%;
+}
+
+.eye-right {
+  right: 21.6%;
+}
+
+.eye .eye__inner {
+  position: absolute;
+  width: 65%;
+  height: 89%;
+  background: red;
+  border-radius: 50%;
+  left: 0;
+  background-color: hsl(var(--eye-base));
+  box-shadow: 0 0 0.1em 0.1em hsl(var(--eye-contour)) inset;
+  transition: 0.15s transform;
+}
+
+.eye .eye__inner::before {
+  content: "";
+  position: absolute;
+  top: 18%;
+  left: 26%;
+  width: 50%;
+  height: 55%;
+  background-color: hsl(var(--eye-pupil));
+  border-radius: 50%;
+  box-shadow: 0 0 0.05em 0.1em hsl(var(--eye-pupil-contour)) inset, 0 0 0.05em 0.05em hsla(var(--eye-pupil-contour), 0.7);
+}
+
+.eye .eye__inner::after {
+  content: "";
+  position: absolute;
+  top: 18%;
+  right: 0%;
+  width: 38%;
+  height: 34%;
+  border-radius: 50%;
+  box-shadow: -0.6em 0 0.2em rgba(255, 255, 255, 0.85);
+}
+
+.nose {
+  position: absolute;
+  top: 29%;
+  left: 45%;
+  width: 10%;
+  height: 38%;
+  border-radius: 0 0 50% 50%/8%;
+  background: hsla(var(--base), 0.2) linear-gradient(83deg, hsla(var(--contour), 0.15) 0%, hsla(var(--contour), 0) 30%), linear-gradient(-83deg, hsla(var(--contour), 0.15) 0%, hsla(var(--contour), 0) 30%);
+  box-shadow: 0.1em -0.2em 0.1em hsla(var(--contour), 0.1), -0.1em -0.2em 0.1em hsla(var(--contour), 0.1);
+  border-bottom: 0.2em solid hsla(var(--contour), 0.4);
+  -webkit-clip-path: inset(8% -100% -100% -100%);
+  clip-path: inset(8% -100% -100% -100%);
+}
+
+.nose::before,
+.nose::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0.5em;
+  height: 0.6em;
+  border-bottom: 0.1em solid hsla(var(--contour), 0.3);
+  background-color: hsla(var(--base), 0.2);
+}
+
+.nose::before {
+  left: -0.45em;
+  border-radius: 50% 15% 15% 50%;
+  box-shadow: -0.05em 0.05em 0.1em hsla(var(--contour), 0.2), -0.05em 0.05em 0.1em hsla(var(--contour), 0.2);
+}
+
+.nose::after {
+  right: -0.45em;
+  border-radius: 15% 50% 50% 15%;
+  box-shadow: 0.05em 0.05em 0.1em hsla(var(--contour), 0.2), 0.05em 0.05em 0.1em hsla(var(--contour), 0.2);
+}
+
+.mouth {
+  position: absolute;
+  bottom: 21%;
+  left: 31%;
+  width: 38%;
+  height: 11%;
+  background-image: linear-gradient(107deg, hsla(var(--contour), 0) 0% 4%, hsla(var(--contour), 0.15) 8%, hsla(var(--contour), 0) 12%), linear-gradient(-107deg, hsla(var(--contour), 0) 0% 4%, hsla(var(--contour), 0.15) 8%, hsla(var(--contour), 0) 12%);
+  background-size: 80% 60%;
+  background-repeat: no-repeat;
+  background-position: -5% 25%, 105% 25%;
+}
+
+.lip__bottom {
+  position: absolute;
+  top: 23%;
+  left: 6%;
+  width: 87%;
+  height: 46%;
+  border-radius: 0 0 50% 50%;
+  box-shadow: 0 -0.1em 0.05em inset hsla(var(--contour), 0.3);
+  z-index: 2;
+}
+
+.lip__bottom::before {
+  content: "";
+  position: absolute;
+  top: 85%;
+  left: 13%;
+  width: 75%;
+  height: 0.4em;
+  background-color: var(--bottom-lip);
+  border-radius: 0 0 50% 50%/0 0 100% 100%;
+  z-index: -1;
+}
+
+.lip__upper {
+  position: absolute;
+  top: 32%;
+  left: 21%;
+  width: 59%;
+  height: 29%;
+  border-radius: 50%/70% 70% 30% 30%;
+  background-color: var(--upper-lip);
+}
+
+.dark .eye__inner {
+  transform: translatex(50%);
+}
