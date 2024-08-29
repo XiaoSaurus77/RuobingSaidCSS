@@ -1,0 +1,56 @@
+html {
+  background: #000;
+  color: #666;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+span {
+  display: block;
+  float: left;
+}
+
+.on {
+  color: #fff;
+}
+
+.wrapper {
+  width: 4px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -100px;
+  margin-left: -100px;
+}
+
+.wrapper .timebox {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 0;
+  left: 0;
+  border-radius: 100%;
+  transition: all 0.5s;
+}
+
+.timebox span {
+  transition: all 0.5s;
+  float: left;
+}
+
+.wrapper .timebox span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 40px;
+  height: 18px;
+  margin-top: -9px;
+  margin-left: -20px;
+  text-align: right;
+}
