@@ -1,0 +1,47 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>让它变得阴森恐怖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./52-让它变得阴森恐怖.css">
+
+</head>
+
+<body>
+  <svg width="800" height="800" viewbox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" id="pumpkin">
+    <defs>
+      <mask id="mouthmask">
+        <path fill="#fff" d="M 60 300 Q 400 300 740 300 Q 740 340 740 390 C 530 390 280 390 60 390 C 60 340 60 300 60 300 " />
+      </mask>
+    </defs>
+  
+    <g mask="url(#mouthmask)">
+      <foreignObject id="candle" x="0" y="0" width="800" height="800">
+        <div class="pumpkin" xmlns="http://www.w3.org/1999/xhtml">
+          <div class="candle"></div>
+        </div>
+      </foreignObject>
+      <path class="mouth2" fill="#fff" d="M 60 300 Q 400 300 740 300 Q 740 340 740 390 C 530 390 280 390 60 390 C 60 340 60 300 60 300 " />
+      <path class="mouth1" fill="transparent" d="M 60 300 Q 400 300 740 300 Q 740 340 740 390 C 530 390 280 390 60 390 C 60 340 60 300 60 300 " />
+      <foreignObject x="0" y="0" width="800" height="800">
+        <div class="pumpkin" xmlns="http://www.w3.org/1999/xhtml">
+          <h1><span class="word" id="upper"></span></h1>
+          <h1><span class="word" id="lower"></span></h1>
+        </div>
+      </foreignObject>
+    </g>
+  </svg>
+  <div class="gourd">
+    <div class="eye"></div>
+    <div class="eye"></div>
+  </div>
+  <div class="terrible-text">
+    <label for="name">Your Halloween Name: </label><input type="text" maxlength="17" id="spookytext" placeholder="make it spooookyyy!"></input>
+  </div>
+</body>
+
+
+<script src="./52-让它变得阴森恐怖.js"></script>
+
+</html>

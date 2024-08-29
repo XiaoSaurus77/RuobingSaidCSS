@@ -1,0 +1,498 @@
+/* background pattern from heropatterns.com */
+@import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
+@font-face {
+  font-family: "Stranger";
+  src: url("https://assets.codepen.io/383755/StrangerbackintheNight.woff2") format("woff2");
+}
+body,
+html {
+  height: 100%;
+  display: grid;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+body:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  backdrop-filter: invert(1) saturate(0);
+  z-index: 1;
+}
+
+.gourd {
+  position: absolute;
+  width: 500px;
+  height: 200px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), inset 0 0 0 rgba(0, 0, 0, 0), 0 0 0 1px #eca43a, 0 20px 40px -20px rgba(0, 0, 0, 0.25);
+  left: calc(50% - 250px);
+  top: 50%;
+  transform: translateY(calc(-50% - 25px));
+  transform-origin: bottom;
+  transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-delay: 0.25s;
+  will-change: transform, box-shadow, height, border-radius;
+  transform-style: preserve-3d;
+  border-radius: 10px;
+  z-index: 2;
+}
+.gourd:after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  background: linear-gradient(-25deg, #7baa50, #7baa50 45%, #6f9948 50%, #88b460 55%);
+  border-radius: 100px 0 100px 0;
+  left: 265px;
+  top: -75px;
+  transition: 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-origin: 0% 100%;
+  transform: scale(0, 0.5);
+}
+.gourd:before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 120px;
+  background: radial-gradient(ellipse at center, #628840 30px, #88b460 30px) 50% 0%/60px 30px no-repeat, #88b460;
+  box-shadow: inset -5px 0 20px #628840, inset 5px 0 20px #628840, 0 5px 40px rgba(0, 0, 0, 0.25);
+  border-radius: 100px/50px;
+  top: -100px;
+  left: calc(50% - 30px);
+  transition: 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  height: 120px;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+.gourd .eye {
+  position: absolute;
+  left: 100px;
+  top: 80px;
+  height: 50px;
+  width: 80px;
+  border-radius: 150px 150px 0 0/200px 200px 0 0;
+  background: #241703;
+  box-shadow: inset 0 5px 0 5px #98600f;
+  transition: 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-origin: bottom;
+  transform: scaleY(0);
+}
+.gourd .eye:before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 17.5px;
+  background: #eca43a;
+  bottom: 0;
+  left: calc((50% - 50px) + (var(--char-total) * 7.5px));
+  box-shadow: calc(10px - (var(--char-total) * 2px)) -1px 0 1px #af6f11;
+  border-radius: 50px 50px 0 0;
+  transition: transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275), left 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  transform-origin: bottom;
+  transform: scaleY(0);
+}
+.gourd .eye:last-of-type {
+  left: auto;
+  right: 100px;
+}
+
+svg {
+  position: absolute;
+  z-index: 9;
+  width: 400px;
+  height: 400px;
+  left: calc(50% - 200px);
+  top: calc(50% - 187.5px);
+}
+svg path {
+  transition: 0.2s ease-in-out;
+}
+svg path.mouth1, svg path.mouth2 {
+  stroke: #eca43a;
+  stroke-width: 0px;
+}
+svg path.mouth2 {
+  stroke: #0c0801;
+  stroke-width: 4px;
+}
+svg foreignObject .pumpkin h1 span.word span.char {
+  transform: translateY(150%);
+  transition: 0.2s ease-in-out;
+}
+svg foreignObject .pumpkin h1:first-of-type span.word span.char {
+  transform: translateY(-150%);
+}
+svg.open ~ .gourd {
+  background: #eca43a;
+  box-shadow: inset 0 10px 60px rgba(0, 0, 0, 0.5), inset 0 -40px 60px rgba(0, 0, 0, 0.75), 0 0 0 0px #eca43a, 0 20px 40px -20px rgba(0, 0, 0, 0), inset 28px 0 5px #eca43a, inset 37px 0 2px rgba(0, 0, 0, 0.1), inset 72px 0 5px #eca43a, inset 78px 0 2px rgba(0, 0, 0, 0.05), inset -28px 0 5px #eca43a, inset -37px 0 2px rgba(0, 0, 0, 0.1), inset -72px 0 5px #eca43a, inset -78px 0 2px rgba(0, 0, 0, 0.05);
+  border-radius: 200px 200px 300px 300px/250px 250px 300px 300px;
+  height: 400px;
+  transform: translateY(-50%);
+  transition-delay: 0s;
+}
+svg.open ~ .gourd:after {
+  transform: scale(1, 1);
+  transition-delay: 0.8s;
+}
+svg.open ~ .gourd:before {
+  transform: scaleY(1) skewY(10deg) rotate(-10deg);
+  transition-delay: 0.5s;
+}
+svg.open ~ .gourd .eye {
+  transform: scaleY(1);
+  transition-delay: 0.75s;
+}
+svg.open ~ .gourd .eye:before {
+  transform: scaleY(1);
+  transition-delay: 1s, 0s, 0s;
+}
+svg.open ~ .terrible-text label {
+  background-position: 50% 0%;
+  transition: 0.5s ease-in-out, background-position 0.35s ease-in-out;
+  transform: translateY(-200px);
+  filter: blur(14px);
+  opacity: 0;
+  transition-delay: 0.05s, 0s;
+}
+svg.open ~ .terrible-text input {
+  opacity: 0;
+  color: #fff;
+  transition: 0s ease-in-out;
+}
+svg.open path {
+  d: path("M 60 300 Q 400 390 740 300 Q 740 340 720 400 C 640 650 180 650 80 400 C 60 340 60 300 60 300 ");
+}
+svg.open path.mouth1 {
+  stroke-width: 40px;
+}
+svg.open path.mouth2 {
+  fill: transparent;
+  stroke: #98600f;
+  stroke-width: 70px;
+}
+svg.open foreignObject#candle {
+  background: #000;
+}
+svg.open foreignObject .candle {
+  transition: 3s ease-in-out;
+  transition-delay: 1s;
+  opacity: 1;
+  transform: scale(0.75) translateY(0px);
+}
+svg.open foreignObject .pumpkin h1 span.word span.char {
+  animation: toothin 0.5s ease-in-out 1 forwards;
+}
+svg.open foreignObject .pumpkin h1 span.word span.char:before {
+  opacity: 0;
+  animation: toothin 0.5s ease-in-out 1 forwards 0.25s;
+}
+@keyframes toothin {
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.pumpkin {
+  opacity: 1;
+  pointer-events: none;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  left: 50%;
+  top: calc(50% + 40px);
+  transform: translate(-50%, -50%) scale(2.05, 1.9);
+  box-shadow: 0 0 0 25px #eca43a;
+}
+
+h1 {
+  font-family: "Titan One";
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0px;
+  color: #eca43a;
+  transform: scale(0.65) translateY(65px);
+}
+h1 .word {
+  font-size: clamp(10px, calc(4px * (20 - var(--char-total))), 80px);
+}
+h1:nth-of-type(2) {
+  transform: scale(0.75) translateY(85px);
+}
+h1:nth-of-type(2) .word {
+  transform: translateY(calc((1px * var(--char-total)) - 15px));
+  font-size: clamp(10px, calc(2.5px * (30 - var(--char-total))), 80px);
+}
+h1:nth-of-type(2) .word .char {
+  offset-path: path("M 20 174 Q 200 340 374 185 ");
+}
+h1:nth-of-type(2) .word .char:before {
+  top: -5px;
+  transform-origin: bottom;
+}
+h1 .word {
+  display: block;
+  position: relative;
+}
+h1 .word#lower .char:nth-of-type(1) {
+  offset-distance: calc(11.5% - (var(--char-total) * 1%) - 1.5%);
+}
+h1 .word#lower .char:nth-of-type(2) {
+  offset-distance: calc(23% - (var(--char-total) * 1%) - 1.5%);
+}
+h1 .word#lower .char:nth-of-type(3) {
+  offset-distance: calc(34.5% - (var(--char-total) * 1%) - 1.5%);
+}
+h1 .word#lower .char:nth-of-type(4) {
+  offset-distance: calc(46% - (var(--char-total) * 1%) - 1.5%);
+}
+h1 .word#lower .char:nth-of-type(5) {
+  offset-distance: calc(57.5% - (var(--char-total) * 1%) - 1.5%);
+}
+h1 .word#lower .char:nth-of-type(6) {
+  offset-distance: calc(69% - (var(--char-total) * 1%) - 1.5%);
+}
+h1 .word#lower .char:nth-of-type(7) {
+  offset-distance: calc(80.5% - (var(--char-total) * 1%) - 1.5%);
+}
+h1 .word#lower .char:nth-of-type(8) {
+  offset-distance: calc(92% - (var(--char-total) * 1%) - 1.5%);
+}
+h1 .word#lower .char:nth-of-type(9) {
+  offset-distance: calc(103.5% - (var(--char-total) * 1%) - 1.5%);
+}
+h1 .word#lower .char:nth-of-type(10) {
+  offset-distance: calc(115% - (var(--char-total) * 1%) - 1.5%);
+}
+h1 .word#lower .char:nth-of-type(11) {
+  offset-distance: calc(126.5% - (var(--char-total) * 1%) - 1.5%);
+}
+h1 .word#lower .char:nth-of-type(12) {
+  offset-distance: calc(138% - (var(--char-total) * 1%) - 1.5%);
+}
+h1 .word#lower .char:nth-of-type(13) {
+  offset-distance: calc(149.5% - (var(--char-total) * 1%) - 1.5%);
+}
+h1 .word#lower .char:nth-of-type(14) {
+  offset-distance: calc(161% - (var(--char-total) * 1%) - 1.5%);
+}
+h1 .word#lower .char:nth-of-type(15) {
+  offset-distance: calc(172.5% - (var(--char-total) * 1%) - 1.5%);
+}
+h1 .word#lower .char:nth-of-type(16) {
+  offset-distance: calc(184% - (var(--char-total) * 1%) - 1.5%);
+}
+h1 .word#lower .char:nth-of-type(17) {
+  offset-distance: calc(195.5% - (var(--char-total) * 1%) - 1.5%);
+}
+h1 .word#lower .char:nth-of-type(18) {
+  offset-distance: calc(207% - (var(--char-total) * 1%) - 1.5%);
+}
+h1 .word#lower .char:nth-of-type(19) {
+  offset-distance: calc(218.5% - (var(--char-total) * 1%) - 1.5%);
+}
+h1 .word#lower .char:nth-of-type(20) {
+  offset-distance: calc(230% - (var(--char-total) * 1%) - 1.5%);
+}
+h1 .word .char {
+  position: absolute;
+  left: 0;
+  top: 0;
+  offset-path: path("M 0 170 Q 200 220 400 170 ");
+}
+h1 .word .char:nth-of-type(1) {
+  offset-distance: calc(13% - (var(--char-total) * 1%) - 2%);
+}
+h1 .word .char:nth-of-type(2) {
+  offset-distance: calc(26% - (var(--char-total) * 1%) - 2%);
+}
+h1 .word .char:nth-of-type(3) {
+  offset-distance: calc(39% - (var(--char-total) * 1%) - 2%);
+}
+h1 .word .char:nth-of-type(4) {
+  offset-distance: calc(52% - (var(--char-total) * 1%) - 2%);
+}
+h1 .word .char:nth-of-type(5) {
+  offset-distance: calc(65% - (var(--char-total) * 1%) - 2%);
+}
+h1 .word .char:nth-of-type(6) {
+  offset-distance: calc(78% - (var(--char-total) * 1%) - 2%);
+}
+h1 .word .char:nth-of-type(7) {
+  offset-distance: calc(91% - (var(--char-total) * 1%) - 2%);
+}
+h1 .word .char:nth-of-type(8) {
+  offset-distance: calc(104% - (var(--char-total) * 1%) - 2%);
+}
+h1 .word .char:nth-of-type(9) {
+  offset-distance: calc(117% - (var(--char-total) * 1%) - 2%);
+}
+h1 .word .char:nth-of-type(10) {
+  offset-distance: calc(130% - (var(--char-total) * 1%) - 2%);
+}
+h1 .word .char:nth-of-type(11) {
+  offset-distance: calc(143% - (var(--char-total) * 1%) - 2%);
+}
+h1 .word .char:nth-of-type(12) {
+  offset-distance: calc(156% - (var(--char-total) * 1%) - 2%);
+}
+h1 .word .char:nth-of-type(13) {
+  offset-distance: calc(169% - (var(--char-total) * 1%) - 2%);
+}
+h1 .word .char:nth-of-type(14) {
+  offset-distance: calc(182% - (var(--char-total) * 1%) - 2%);
+}
+h1 .word .char:nth-of-type(15) {
+  offset-distance: calc(195% - (var(--char-total) * 1%) - 2%);
+}
+h1 .word .char:nth-of-type(16) {
+  offset-distance: calc(208% - (var(--char-total) * 1%) - 2%);
+}
+h1 .word .char:nth-of-type(17) {
+  offset-distance: calc(221% - (var(--char-total) * 1%) - 2%);
+}
+h1 .word .char:nth-of-type(18) {
+  offset-distance: calc(234% - (var(--char-total) * 1%) - 2%);
+}
+h1 .word .char:nth-of-type(19) {
+  offset-distance: calc(247% - (var(--char-total) * 1%) - 2%);
+}
+h1 .word .char:nth-of-type(20) {
+  offset-distance: calc(260% - (var(--char-total) * 1%) - 2%);
+}
+h1 .word .char:before {
+  content: attr(data-char);
+  z-index: -1;
+  position: absolute;
+  color: #98600f;
+  top: 5px;
+  transform-origin: top;
+  transform: scale(1.05);
+}
+
+.candle {
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  z-index: 999;
+  top: 90px;
+  left: calc(50% - 100px);
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to top, #000, transparent 30px), radial-gradient(ellipse at center, #efefef 10px, transparent 10px) 50% 100px/100% 50% no-repeat, linear-gradient(to right, transparent calc(50% - 10px), #aaa calc(50% - 10px), #ccc calc(50% + 10px), transparent calc(50% + 10px)) 50% 100%/100% 50px no-repeat, radial-gradient(circle at center, rgba(255, 255, 255, 0.25), #000 75%), #000;
+  transform: scale(0.75) translateY(75px);
+}
+.candle:before {
+  animation-play-state: paused;
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 20px;
+  transform-origin: bottom;
+  transform: scale(0.75, 2.5);
+  background: radial-gradient(ellipse at center, #3376d0 3px, transparent 7px) 50% 100%/100% 25% no-repeat, #fefefe;
+  box-shadow: inset 0 5px 7.5px -6px orange, inset 0 10px 10px -6px yellow, 0 0 10px 1px orange, 0 -5px 20px 0px yellow, 0 -5px 35px 3px #fefefe, 0 0 50px 10px #fefefe;
+  border-radius: 200px 200px 100px 100px/400px 400px 200px 200px;
+  left: calc(50% - 7.5px);
+  top: 120px;
+  animation: flicker 2s linear infinite alternate, blow 2s ease-in-out infinite alternate;
+}
+@keyframes flicker {
+  30% {
+    opacity: 1;
+  }
+  31% {
+    opacity: 0.75;
+  }
+  32% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  76% {
+    opacity: 0.75;
+  }
+  77% {
+    opacity: 1;
+  }
+  77.5% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 1;
+  }
+}
+@keyframes blow {
+  0% {
+    transform: skewY(10deg) scale(0.75, 2.5) rotate(5deg);
+  }
+  50% {
+    transform: skewY(0deg) scale(0.8, 2.15) rotate(-7.5deg);
+  }
+  100% {
+    transform: skewY(-10deg) scale(0.75, 2.25) rotate(-5deg);
+  }
+}
+.candle:after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 20px;
+  background: #000;
+  -webkit-mask: linear-gradient(to bottom, transparent, #000);
+  top: 130px;
+  left: calc(50% - 1.5px);
+}
+
+body {
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M82.42 180h-1.415L0 98.995v-2.827L6.167 90 0 83.833V81.004L81.005 0h2.827L90 6.167 96.167 0H98.996L180 81.005v2.827L173.833 90 180 96.167V98.996L98.995 180h-2.827L90 173.833 83.833 180H82.42zm0-1.414L1.413 97.58 8.994 90l-7.58-7.58L82.42 1.413 90 8.994l7.58-7.58 81.006 81.005-7.58 7.58 7.58 7.58-81.005 81.006-7.58-7.58-7.58 7.58zM175.196 0h-25.832c1.033 2.924 2.616 5.59 4.625 7.868C152.145 9.682 151 12.208 151 15c0 5.523 4.477 10 10 10 1.657 0 3 1.343 3 3v4h16V0h-4.803c.51.883.803 1.907.803 3 0 3.314-2.686 6-6 6s-6-2.686-6-6c0-1.093.292-2.117.803-3h10.394-13.685C161.18.938 161 1.948 161 3v4c-4.418 0-8 3.582-8 8s3.582 8 8 8c2.76 0 5 2.24 5 5v2h4v-4h2v4h4v-4h2v4h2V0h-4.803zm-15.783 0c-.27.954-.414 1.96-.414 3v2.2c-1.25.254-2.414.74-3.447 1.412-1.716-1.93-3.098-4.164-4.054-6.612h7.914zM180 17h-3l2.143-10H180v10zm-30.635 163c-.884-2.502-1.365-5.195-1.365-8 0-13.255 10.748-24 23.99-24H180v32h-30.635zm12.147 0c.5-1.416 1.345-2.67 2.434-3.66l-1.345-1.48c-1.498 1.364-2.62 3.136-3.186 5.14H151.5c-.97-2.48-1.5-5.177-1.5-8 0-12.15 9.84-22 22-22h8v30h-18.488zm13.685 0c-1.037-1.793-2.976-3-5.197-3-2.22 0-4.16 1.207-5.197 3h10.394zM0 148h8.01C21.26 148 32 158.742 32 172c0 2.805-.48 5.498-1.366 8H0v-32zm0 2h8c12.15 0 22 9.847 22 22 0 2.822-.53 5.52-1.5 8h-7.914c-.567-2.004-1.688-3.776-3.187-5.14l-1.346 1.48c1.09.99 1.933 2.244 2.434 3.66H0v-30zm15.197 30c-1.037-1.793-2.976-3-5.197-3-2.22 0-4.16 1.207-5.197 3h10.394zM0 32h16v-4c0-1.657 1.343-3 3-3 5.523 0 10-4.477 10-10 0-2.794-1.145-5.32-2.992-7.134C28.018 5.586 29.6 2.924 30.634 0H0v32zm0-2h2v-4h2v4h4v-4h2v4h4v-2c0-2.76 2.24-5 5-5 4.418 0 8-3.582 8-8s-3.582-8-8-8V3c0-1.052-.18-2.062-.512-3H0v30zM28.5 0c-.954 2.448-2.335 4.683-4.05 6.613-1.035-.672-2.2-1.16-3.45-1.413V3c0-1.04-.144-2.046-.414-3H28.5zM0 17h3L.857 7H0v10zM15.197 0c.51.883.803 1.907.803 3 0 3.314-2.686 6-6 6S4 6.314 4 3c0-1.093.292-2.117.803-3h10.394zM109 115c-1.657 0-3 1.343-3 3v4H74v-4c0-1.657-1.343-3-3-3-5.523 0-10-4.477-10-10 0-2.793 1.145-5.318 2.99-7.132C60.262 93.638 58 88.084 58 82c0-13.255 10.748-24 23.99-24h16.02C111.26 58 122 68.742 122 82c0 6.082-2.263 11.636-5.992 15.866C117.855 99.68 119 102.206 119 105c0 5.523-4.477 10-10 10zm0-2c-2.76 0-5 2.24-5 5v2h-4v-4h-2v4h-4v-4h-2v4h-4v-4h-2v4h-4v-4h-2v4h-4v-2c0-2.76-2.24-5-5-5-4.418 0-8-3.582-8-8s3.582-8 8-8v-4c0-2.64 1.136-5.013 2.946-6.66L72.6 84.86C70.39 86.874 69 89.775 69 93v2.2c-1.25.254-2.414.74-3.447 1.412C62.098 92.727 60 87.61 60 82c0-12.15 9.84-22 22-22h16c12.15 0 22 9.847 22 22 0 5.61-2.097 10.728-5.55 14.613-1.035-.672-2.2-1.16-3.45-1.413V93c0-3.226-1.39-6.127-3.6-8.14l-1.346 1.48C107.864 87.987 109 90.36 109 93v4c4.418 0 8 3.582 8 8s-3.582 8-8 8zM90.857 97L93 107h-6l2.143-10h1.714zM80 99c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm20 0c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6z' fill='%23f99a00' fill-opacity='0.3' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.terrible-text {
+  position: absolute;
+  z-index: 999;
+  width: 340px;
+  height: 100px;
+  left: calc(50% - 170px);
+  top: calc(50% - 90px);
+}
+.terrible-text label {
+  height: 40px;
+  font-size: 60px;
+  display: inline-block;
+  font-family: "Stranger";
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to top, rgba(245, 245, 245, 0.75) 50%, #000 75%);
+  background-position: 50% 100%;
+  transform-origin: bottom;
+  background-size: 50% 300%;
+  transition: 0.25s ease-in-out, background-position 0.25s ease-in-out;
+  transition-delay: 0s, 0s;
+}
+.terrible-text input {
+  width: 100%;
+  height: 45px;
+  display: block;
+  margin-top: 2.5px;
+  color: #000;
+  box-sizing: border-box;
+  padding: 0 10px;
+  font-size: 18px;
+  outline: none;
+  transition: opacity 0.3s ease-in-out, color 0.2s ease-in-out;
+  transition-delay: 0.5s;
+}
+.terrible-text input:focus {
+  color: #fff;
+}
