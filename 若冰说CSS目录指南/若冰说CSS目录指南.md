@@ -372,3 +372,19 @@
 ##### [90 小题大做登录页](/若冰说CSS/90-小题大做登录页)
 
 ![小题大做登录页](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/90-小题大做登录页.gif)
+
+##### [91 被蠕虫盯上了](/若冰说CSS/91-被蠕虫盯上了)
+
+![被蠕虫盯上了](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/91-被蠕虫盯上了.gif)
+
+##### [92 随机设备加载组件](/若冰说CSS/92-随机设备加载组件)
+
+![随机设备加载组件](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/92-随机设备加载组件.gif)
+
+##### [93 霓虹灯](/若冰说CSS/93-霓虹灯)
+
+![霓虹灯](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/93-霓虹灯.gif)
+
+##### [94 请抚摸我](/若冰说CSS/94-请抚摸我)
+
+![请抚摸我](https://gitee.com/XiaoSaurus_dev/xiaosaurus-drawingbed/raw/master/imgs/94-请抚摸我.gif)
