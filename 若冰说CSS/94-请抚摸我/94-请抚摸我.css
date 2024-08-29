@@ -1,0 +1,154 @@
+body {
+	display: grid;
+	place-items: center;
+	height: 100vh;
+	width: 100vw;
+  }
+  body:before {
+	content: "pet me!";
+	font-family: "Futura", sans-serif;
+	position: absolute;
+	left: 50%;
+	top: calc(50% + 100px);
+	transform: translate(-50%, -50%);
+	color: #6a48e9;
+	transition: 1s ease-in-out 3s;
+	font-size: 11px;
+	opacity: 0;
+  }
+  body:has(svg.loaded):before {
+	opacity: 1;
+  }
+  body svg {
+	width: 200px;
+	height: auto;
+	clip-path: polygon(0 0, 50% 0, 99% 0, 100% 75%, 50% 99%, 0 75%);
+	transform: scale(0);
+	transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2s;
+  }
+  body svg g {
+	transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.025);
+  }
+  body svg g #innerleft,
+  body svg g #innerright {
+	transition: 0.3s ease-in-out;
+  }
+  body svg #outer {
+	transform-origin: bottom;
+  }
+  body svg.loaded {
+	transform: scale(0.75);
+  }
+  body svg.loaded #llama {
+	animation: zoom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.025) 1 forwards 2.15s;
+  }
+  body svg.loaded #llama:hover {
+	cursor: pointer;
+  }
+  body svg.loaded #llama:hover:active {
+	cursor: grab;
+  }
+  body svg.loaded #llama:hover:active #outer {
+	transform: scaleY(0.9) scaleX(1.1);
+  }
+  body svg.loaded #llama:hover:active #innerleft {
+	transform: rotate(-15deg);
+  }
+  body svg.loaded #llama:hover:active #innerwrap {
+	transform: translateY(1.5px);
+  }
+  body svg.loaded #llama:hover:active #bolt {
+	animation: wiggle2 0.05s ease-in-out infinite alternate;
+  }
+  @keyframes wiggle2 {
+	0% {
+	  transform: rotate(-1deg);
+	}
+	100% {
+	  transform: rotate(1deg);
+	}
+  }
+  body svg.loaded #llama:hover:active #lefteye,
+  body svg.loaded #llama:hover:active #righteye {
+	animation-play-state: paused;
+  }
+  body svg.loaded #llama:hover:active #lefteye #innerleft,
+  body svg.loaded #llama:hover:active #lefteye #innerright,
+  body svg.loaded #llama:hover:active #righteye #innerleft,
+  body svg.loaded #llama:hover:active #righteye #innerright {
+	clip-path: polygon(0 42%, 100% 42%, 100% 50%, 0 50%);
+  }
+  body svg.loaded #llama:hover:active #lefteye > g:not([id]),
+  body svg.loaded #llama:hover:active #righteye > g:not([id]) {
+	opacity: 0;
+  }
+  @keyframes zoom {
+	from {
+	  transform: translateY(200px);
+	}
+	to {
+	  transform: rotate(calc(var(--mouseX) * 5deg)) scaleY(calc(1 + (var(--mouseY) / 12.5))) translateY(clamp(0px, calc(var(--mouseY) * 10px), 25px)) translateX(calc(var(--mouseX) * 2px));
+	}
+  }
+  body svg #lefteye,
+  body svg #righteye {
+	transform: scaleY(calc(1 - (var(--mouseY) / 12.5))) translate(calc(var(--mouseX) * 2px), calc(var(--mouseY) * -1px));
+	animation: blink 5s ease-in-out infinite 0.5s;
+  }
+  body svg #lefteye #innerleft,
+  body svg #lefteye #innerright,
+  body svg #righteye #innerleft,
+  body svg #righteye #innerright {
+	transform-origin: 40% 50%;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  @keyframes blink {
+	20%, 24% {
+	  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	}
+	22% {
+	  clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+	}
+  }
+  body svg #lefteye > g:not([id]),
+  body svg #righteye > g:not([id]) {
+	transition: 0s cubic-bezier(0.175, 0.885, 0.32, 1.025);
+	transform: translate(calc(var(--mouseX) * 2px), calc(var(--mouseY) * -2px));
+  }
+  body svg #mouth {
+	transform: translate(calc(var(--mouseX) * 3px), calc(var(--mouseY) * -5px));
+  }
+  body svg #mouth #mouthshadow {
+	transform: translate(calc(var(--mouseX) * -1px), calc(var(--mouseY) * 1px));
+  }
+  body svg #mouth #mouthshadow path {
+	fill: #d9d4ff;
+  }
+  body svg #mouth #mouthinner {
+	transition: 0s cubic-bezier(0.175, 0.885, 0.32, 1.025);
+	transform: translate(calc(var(--mouseX) * 1.5px), calc(var(--mouseY) * -1.5px));
+  }
+  body svg #bolt {
+	transform-origin: bottom;
+	animation: wiggle 5s ease-in-out infinite;
+  }
+  @keyframes wiggle {
+	90% {
+	  transform: rotate(0deg);
+	}
+	93%, 97% {
+	  transform: rotate(-1deg);
+	}
+	95%, 99% {
+	  transform: rotate(1deg);
+	}
+  }
+  body svg #llama {
+	transform: translateY(200px);
+	transform-origin: bottom;
+  }
+  body svg #shadow path {
+	fill: #efefef;
+	transform-origin: 50% 20%;
+	transform: rotate(calc(var(--mouseX) * 5deg)) translate(calc(var(--mouseX) * -0.5px), calc(var(--mouseY) * -1.5px));
+  }
